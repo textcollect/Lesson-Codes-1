@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Control Flow</title>
+</head>
+
+<body>
+
+    <script>
+        // if-else
+        /*
+        Use an age variable to check:
+        1. age <= 10: console "Please go to the Juice section"
+        2. age < 18: "Please buy the root beer instead"
+        3. age >=18: "Yes can buy some beer for CNY"
+
+        1. name has to be "jean"
+            -name is jean. console.log(`Sorry you are not eligible to buy beer`)
+            -name is jean, console.log(`Ok Jean enjoy your beer`)
+        */
+
+       let age = 18;
+       let name = "Jean";
+
+       const checkAge = (age, name) => {
+            if (age <= 10) {
+                console.log("Please go to the Juice section");
+            }
+            else if (age < 18) {
+                console.log("Please buy the root beer instead");
+            }
+            else if (age >= 18) {
+
+                // Nested if-else statement
+                if (name.toLowerCase() == "jean") {
+                    console.log(`Ok Jean enjoy your beer`);
+                }
+                else {
+                    console.log(`Sorry you are not eligible to buy beer`);
+                }
+            }
+            else {
+                // Error capture
+                console.log("Age undefined. Please check again");
+            }
+        }
+
+
+       // Comparison and Logical Operator
+       let num1 = 8, num2 = 10, num3 = 20;
+       console.log(num1 == num2); //false
+       console.log(num1 === num2); //check if same type and value
+       console.log(num1 !== num2); //check if NOT same type and value
+
+       console.log(num1 > num2 && num2 < num3 && num1 < num3); //F T T = F
+       console.log(num1 > num2 || num2 < num3 && num1 < num3); //True
+
+       // example: if (!validate) {console.log("Please fill in all the fields"); }
+       console.log(!(num1 < num2)); //false
+
+
+
+       // Ternary Operator - used in REACT
+       if (age < 18) {
+        console.log("Young");
+       }
+       else {
+        console.log("Old");
+       }
+
+       let checkAge2 = (age < 18) ? "Young" : "Old";
+       console.log(checkAge2);
+
+
+       let credit = 20;
+
+       let year = (credit < 30) ? "Freshman" 
+            : (credit < 60) ? "Junior" : "Senior";
+
+        console.log(year);
+
+
+
+        // Switch Case - compare value in the expression
+        // if expression matches any case, it run that block of codes
+        let course = "javascript"; //get from user input
+
+        // switch (expression)
+        //  case:
+        switch (course) {
+            case "html":
+                console.log("You will be learning html");
+                break;
+            case "css":
+                console.log("You will be learning css");
+                break;
+            case "javascript":
+                console.log("You will be learning javascript");
+                break;
+            default:
+                console.log("The course is invalid");
+        }
+
+    </script>
+
+
+</body>
+
+</html>

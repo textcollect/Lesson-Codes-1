@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add/Search Customers system</title>
+</head>
+
+<body>
+    <section id="addBox">
+        <h1>Add Name to the system</h1>
+  
+        <form onSubmit="event.preventDefault(); addNameForm();">  <!-- prevent Default behaviour and calls addNameForm() function -->
+        <p>
+            <label for="addName">Add Name:</label>
+            <input type="text" id="addName" name="addName" placeholder="Add a name" required>
+        </p>
+        <p>
+            <button type="submit">Add</button>
+        </p>
+        </form>
+    </section>
+
+    
+    <section id="searchBox">
+        <H1>Search Name from the system</H1>
+        <form onSubmit="event.preventDefault(); searchNameForm();">
+            <p>
+                <label for="searchName">Search Name:</label>
+                <input type="text" id="searchName" name="searchName" placeholder="Search for a matching name" required>
+            </p>
+
+            <p>
+                <button>Search</button>
+            </p>
+        </form>
+    </section>
+
+    <section id="display">
+        <form onSubmit="event.preventDefault(); displayNameForm();">
+            <p>
+                Click here to display names in the array.
+                <button>Display</button>
+            </p>   
+        </form>
+    </section>
+  
+    <section id="output">
+        <p></p>
+    </section>
+  
+    <h1>Display Customer List</h1>
+    <section id="customerList">
+        <form onSubmit="event.preventDefault(); displayCustomerForm();">
+            <p>
+                Click here to display Customer List.
+                <button>Display Customers</button>
+            </p>   
+        </form>
+
+        <form onSubmit="event.preventDefault(); filterCustomerMForm();">
+            <p>
+                Click here to filter Customer with Gold Membership.
+                <button>Filter Customers membership</button>
+            </p>   
+        </form>
+  
+        <form onSubmit="event.preventDefault(); filterCustomerSForm();">
+            <p>
+                Click here to filter Customer with spending > 1000.
+                <button>Filter Customers spending</button>
+            </p>   
+        </form>
+
+        <p></p>
+        
+    </section>
+
+    <script src="customers.js"></script>
+</body>
+
+</html>

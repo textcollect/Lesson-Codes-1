@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Functions</title>
+</head>
+
+<body>
+    <script>
+        // function that prints out “Hello World”.
+        function hello() {
+            console.log(`Hello World`);
+        }
+
+        //debugger;
+        
+        // function that adds two numbers together
+        function add2() {
+            let numb1 = prompt(`Enter first number`);
+            let numb2 = prompt(`Enter second number`);
+
+            let total = Number(numb1) + Number(numb2);
+            console.log(`Total is: ${total}`);
+        }
+
+        // function that prints the length of a word
+        function printLength() {
+            let word = prompt(`Please enter word here`);
+            console.log(`word length: ${word.length}`);
+        }
+        
+        /* let person = {
+            name: prompt(`Please enter your full name`),
+            location: prompt(`Where do you live in?`),
+            hobby: prompt(`What is your hobby?`),
+        }; */
+
+        function informationCard(name, loc, hobby) {
+            console.log(`Hi, my name is ${name}. I live in ${loc} and enjoy ${hobby}.`);
+        }
+        //informationCard(person.name, person.location, person.hobby);
+        
+
+        // Calculator
+        let numb1 = prompt(`Enter first number`);
+        numb1 = Number(numb1);
+
+        let numb2 = prompt(`Enter second number`);
+        numb2 = Number(numb2);
+
+        function add(a, b) {
+            let total = a + b;
+            console.log(`Total is: ${total}`);
+        }
+
+        function subtract(a, b) {
+            let total = a - b;
+            console.log(`Total is: ${total}`);
+        }
+
+        function multiply(a, b) {
+            let total = a * b;
+            console.log(`Total is: ${total}`);
+        }
+        
+        function divide(a, b) {
+            if(a < b){
+                let total = b % a;
+                console.log(`Remainder is: ${total}`);
+            }
+            else {
+                let total = a / b;
+                console.log(`Total is: ${total}`);
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

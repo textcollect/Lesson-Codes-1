@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Practice 1 part 1</title>
+
+    <style>
+        .flex-container
+        {
+            display: flex;
+            /* flex-direction defaults to row */
+            height: 400px;
+        }
+
+        .flex-container > div
+        {
+            flex-basis: 200px;
+        }
+
+        .green
+        {
+            background-color: green;
+            color: green;
+        }
+
+        .white
+        {
+            background-color: white;
+            color: white;
+        }
+
+        .red
+        {
+            background-color: darkred;
+            color: darkred;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="green"></div>
+        <div class="white"></div>
+        <div class="red"></div>
+    </div>
+</body>
+</html>

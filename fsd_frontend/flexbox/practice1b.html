@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 1 part 2</title>
+
+    <style>
+        .flex-container
+        {
+            display: flex;
+            /* flex-direction defaults to row */
+            height: 400px;
+        }
+
+        #greenSection
+        {
+            background-color: green;
+            color: green;
+            /* flex-direction is row (default), so flex-basis sets initial width */
+            flex-basis: 200px;
+        }
+
+
+        .flex-innerContainer
+        {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+
+        #yellowSection
+        {
+            background-color: yellow;
+            color: yellow;
+            /* flex-direction is column, so flex-basis sets initial height */
+            flex-basis: 200px;
+        }
+
+        #redSection
+        {
+            background-color: red;
+            color: red;
+            /* flex-direction is column, so flex-basis sets initial height */
+            flex-basis: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <!-- Green section is item 1 and belongs to flex-container -->
+        <div id="greenSection"></div>
+
+        <!-- innerContainer section is item 2 and belongs to flex-container2-->
+        <div class="flex-innerContainer">
+
+            <!-- This item belongs to flex-innerContainer -->
+            <div id="yellowSection"></div>
+
+            <!-- This item belongs to flex-innerContainer -->
+            <div id="redSection"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Functions</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Functions:
+        1. for user click on the button, call a function to execute a block of code (e.g. input validation)
+        2. retrieve post data from the backend and display the data on your post page
+        3. perform calculation required by multiple pages (html)
+        - totalIncome = monthlyIncome *12 + bonus
+        - relief = parent + child + NS
+        - tax = (totalIncome/20) * CPF - relief
+        */
+        
+        // 1. Standard function - w/o parameter and w/o return statement
+        function calculateTax() {
+            // 1) Create all required variables in the function - NOT RECOMMENDED
+            const monthlyIncome = 1200;
+            const bonus = 100;
+            const parent = 200;
+            const child = 0;
+            const NS = 0;
+            const CPF = 100;
+
+            // 2) calculate total income
+            let totalIncome = monthlyIncome * 12 + bonus;
+            console.log(`Your total income is ${totalIncome}.`);
+
+            // 3) calculate relief
+            let relief = parent + child + NS;
+            console.log(`Your total relief is ${relief}.`);
+
+            // 4) calculate tax
+            let tax = (totalIncome / 20) * CPF - relief;
+            console.log(`Your tax payment amount is ${tax}.`);
+        }
+
+        // e.g. to call the function using a button click
+        calculateTax(); // calling the function
+
+
+
+        // 2. Standard function - with parameter and with return statement
+        function getInput() {
+            // 1) Getting inputs from the user
+            // const monthlyIncome = document.querySelector("#monthlyIncome").value;
+            const monthlyIncome = 1200;
+            const bonus = 100;
+            const parent = 200;
+            const child = 0;
+            const NS = 0;
+            const CPF = 100;
+
+            // Input validation
+            // Check certain conditoins (e.g. NS?, How many children?)
+
+            // call another function to do the calculation - not using object
+            calculateTax2(monthlyIncome, bonus, parent, child, NS, CPF);
+        }
+
+
+        function calculateTax2(monthlyIncome, bonus, parent, child, NS, CPF) {
+            // 2) calculate total income
+            let totalIncome = monthlyIncome * 12 + bonus;
+            console.log(`Your total income is ${totalIncome}.`);
+
+            // 3) calculate relief
+            let relief = parent + child + NS;
+            console.log(`Your total relief is ${relief}.`);
+
+            // 4) calculate tax
+            let tax = (totalIncome / 20) * CPF - relief;
+            console.log(`Your tax payment amount is ${tax}.`);
+        }
+
+        getInput(); //calling the function
+    </script>
+    
+</body>
+</html>

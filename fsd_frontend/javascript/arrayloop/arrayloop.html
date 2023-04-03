@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arrays & Loops</title>
+</head>
+
+<body>
+
+    <script>
+        const myAge = 12;
+
+        const nameList = ["Jean", "Amy", "Peter", "John"];
+
+        nameList[1] = "Annie";
+        console.log(nameList[1]);
+        console.log(nameList);
+        console.log(nameList.length);
+        console.log(typeof(nameList));
+
+        //console.log(nameList.sort()); //after sorting, array stays sorted
+        console.log(nameList[nameList.length - 1]); //print last member of array
+
+        
+        //nameList = ["a", "b", "c"]; //reassign array not possible
+        // for const array, able to add/remove/change elements inside the array
+
+        const cars = [];
+        cars[0] = "BMW";
+        cars[1] = "Honda";
+        cars[2] = "Volvo";
+
+
+
+        // Loops
+        // Basic For Loop
+        // Print out all names in nameList
+        //Jean is in my lesson, etc.
+        for (let i = 0; i < nameList.length; i++) {
+            console.log(`${nameList[i]} is in my lesson.`);
+        }
+
+        /*
+        for loop
+            loop through array
+            get each element from array
+            create relevant html element (e.g. <option value="Japan">Japan</option> from ReservationForm.html)
+            insert the element into the html document
+        */
+
+        
+        /*
+        A while-loop is used in a situation where you do not know how many times a loop will actually execute
+        (depend on a condition to be true or flase)
+        Examples: 
+        - a game that needs a number of steps to complete
+        - atm - if enter wrong PIN 3 times, logout
+        */
+
+        // Executes only on condition
+        let j = 1;
+
+        while (j < 10)
+        {
+            console.log(`The number is ${j} in the while-loop`)
+
+            j++;
+        }
+
+
+        /*
+        let isGameOver = false;
+
+        while (!isGameOver)
+        {
+            // Get input from user on the steps
+            // user start to play the game
+            if (isWin)
+            {
+                isGameOver = true;
+            }
+            else if (isLose)
+            {
+                isGameOver = false;
+            }
+        }
+        */
+
+
+
+        // Do-While Loop (executes at least once)
+        let k = 1;
+
+        do {
+            console.log(`The number is ${k} in the do-while loop.`);
+            k++;
+        } while (k < 10)
+
+
+
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+
+        // Example of Post increment: i++, x = y++
+        // Add one and returns the value AFTER it is assigned to the variable
+
+        // Example of Pre increment: ++y
+        // Add one to its variable and returns the value BEFORE it is assigned to the variable
+        let y = 5;
+        console.log(++y); // y = 6
+        console.log(y);
+
+
+
+        /*
+        Array is an object provided by built-in browser with properties and methods
+        - property example: length
+        - methods example: pop(), push(), splice(), unshift(),...
+        */
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const c = console.log;
+
+        // Create a variable to store my current age (18)
+        let myAge = 18; // data type number
+        console.log(myAge);
+
+        let myPrice = 20.20; //data type number
+
+        let myName = "Jean Looi"; // string
+
+        let isHungry = true; // boolean
+
+        let myAddress; //data type is undefined
+        myAddress = "Punggol"; // data type becomes string
+        myAddress = 18; // data type change to number
+        console.log(myAddress);
+
+        let myCar = ""; //string - empty string
+        myCar = "BMW";
+        myCar = "BMW" + 80; //BMW80 - string
+        myCar = 80 + "BMW"; //80BMW - string
+        myCar = "BMW" + 10 + 20; //BMW1020 - string
+        myCar = 10 + 8 + "BMW" + 20; //18BMW20 - string
+        c(typeof(myCar));
+
+        let apple = 5, pear = 4, grape = 2;
+        //let totalCost = apple + pear + grape;
+        //c(totalCost);
+
+
+
+        // Practice
+        //let statement = "I bought an apple, a pear and a grape at the cost of $";
+        //c(statement + totalCost);
+
+        let a = "apple", p = "pear", g = "grape";
+        let totalCost = 12.3555555555555555555;
+        c("I bought an", a, "a", p + ", and a", g, "at the total cost of $" + totalCost.toFixed(2) + ".");
+        
+
+
+        // const - variables declared with const are block-scoped like let, 
+        // but their value cannot be reassigned
+        const myFirstName = "Jean";
+        //myFirstName = "Tim"; //reassignment of value
+
+        const pi = 3.14159;
+        let calc = 30 * pi;
+        c(calc.toFixed(2)); // .toFixed formats value in variable
+
+
+
+        // Template Literals - using back-ticks to formalise a string
+        let text = `The quick brown fox jumps over the lazy dog`;
+
+        // Interpolation
+        let message = `I bought an ${a}, a ${p}, and a ${g} at the cost of $${totalCost.toFixed(2)}.`;
+        c(message);
+
+
+
+        // (1) Array (2) Object datatypes - Thursday
+
+
+
+        // Type conversion
+        // When we get input from the user using the text box -> string
+        let myMobile = "98765432"; //string
+        let getMobile = 65 + myMobile; //string - 6598765432
+        c(typeof(getMobile)); //string
+
+        // Explicit casting
+        let getMobile2 = 65 + Number(myMobile); //98765497
+        c(typeof(getMobile2)); //number
+
+        let cost = "123.456"; //string
+        let getFloat = parseFloat(cost); //number, output: 123.456
+        let getInt = parseInt(cost); //number, output: 123
+
+        let total = 100 + getInt *2; //number
+
+
+
+        let currentYear = new Date().getFullYear();
+
+
+    </script>
+
+</body>
+
+</html>

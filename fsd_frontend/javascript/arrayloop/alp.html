@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arrays & Loops Practice</title>
+</head>
+
+<body>
+
+    <script>
+        const myAge = 12;
+
+        const nameList = ["Jean", "Amy", "Peter", "John"];
+
+        nameList[1] = "Annie";
+        console.log(nameList[1]);
+        console.log(nameList);
+        console.log(nameList.length);
+        console.log(typeof(nameList));
+
+        //console.log(nameList.sort()); //after sorting, array stays sorted
+        console.log(nameList[nameList.length - 1]); //print last member of array
+
+        
+        //nameList = ["a", "b", "c"]; //reassign array not possible
+        // for const array, able to add/remove/change elements inside the array
+
+        const cars = [];
+        cars[0] = "BMW";
+        cars[1] = "Honda";
+        cars[2] = "Volvo";
+
+
+
+        // Loops
+        // Basic For Loop
+        // Print out all names in nameList
+        //Jean is in my lesson, etc.
+        for (let i = 0; i < nameList.length; i++) {
+            console.log(`${nameList[i]} is in my lesson.`);
+        }
+
+        /*
+        for loop
+            loop through array
+            get each element from array
+            create relevant html element (e.g. <option value="Japan">Japan</option> from ReservationForm.html)
+            insert the element into the html document
+        */
+
+
+
+        /*
+        A while-loop is used in a situation where you do not know how many times a loop will actually execute
+        (depend on a condition to be true or flase)
+        Examples: 
+        - a game that needs a number of steps to complete
+        - atm - if enter wrong PIN 3 times, logout
+        */
+
+        // Executes only on condition
+        let j = 1;
+
+        while (j < 10)
+        {
+            console.log(`The number is ${j} in the while-loop`)
+
+            j++;
+        }
+
+
+        /*
+        let isGameOver = false;
+
+        while (!isGameOver)
+        {
+            // Get input from user on the steps
+            // user start to play the game
+            if (isWin)
+            {
+                isGameOver = true;
+            }
+            else if (isLose)
+            {
+                isGameOver = false;
+            }
+        }
+        */
+
+
+
+        // Do-While Loop (executes at least once)
+        let k = 1;
+
+        do {
+            console.log(`The number is ${k} in the do-while loop.`);
+            k++;
+        } while (k < 10)
+
+
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+
+
+
+        // Practice 1
+        // Exercise 1
+        const myAlphabet = ['A', 'B', 'C', 'D','E','F', 'G'];
+
+        const myAlphabetLength = (array) => {
+            console.log(array.length);
+        }
+        myAlphabetLength(myAlphabet);
+
+
+        const planets = ["Mars", "Earth", "Venus", "Jupiter", "Mercury"];
+        console.log(planets[0], planets[planets.length-1]);
+
+        const planetFunction = (array) => {
+            for (let i = 0; i < array.length; i++) {
+                let index = i + 1;
+                let planetName = array[i];
+                console.log(`Item ${index} is ${planetName}.`);
+            }
+        }
+        planetFunction(planets);
+
+
+
+
+        // Exercise 2
+        /*
+        let i;
+        for (i = 0; i < 10; i++) {
+            console.log(i);
+        }
+        */
+
+        /*
+        let i = 0;
+        while (i < 10) {
+            console.log(i);
+            i++;
+        }
+        */
+
+
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+
+        // Practice 2
+        // Exercise #1
+        var names1 = [];
+        names1 = ["Sofia", "David", "Juan"];
+
+        names1.shift(); //remove 1st element (sofia)
+        names1.push("Sara", "Augustin"); //add these 2 to end
+        console.log(names1);
+
+        console.log(names1.indexOf("David")); //index of david = 0
+        names1.splice(1, 0, "Renata"); //renata is after david so before index 1
+        names1.push("Elena"); //add elena
+        console.log(names1);
+
+        // Exercise #2
+
+        let a = ""; //initialize the string
+        let row = 5; //number of rows
+
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < i + 1; j++) {
+                a = a + "*";
+            }
+            a += "\n"
+        }
+        console.log(`${a}`);
+
+
+        // Alternative to above
+        let stars = ""; //initialise stars with string datatype
+
+        for (let i = 0; i < 5; i++) //5 rows
+        {
+            for (let j = 0; j < i; j++) //5columns
+            {
+                stars += "* ";
+                // We want to create a 2-D array
+            }
+            console.log(stars);
+            //stars = ""; //reset
+        }
+
+
+
+
+        // Exercise #3
+        // 1
+        var xValue = 5;
+
+        while (xValue > 0) {
+            console.log(xValue);
+            xValue -= .5;
+        }
+
+        // 2
+
+        // let n = 1;
+
+        // while (n < 100)
+        // {
+        //     /*
+        //     if (a % 2 == 1)
+        //     {
+        //         console.log(a)
+        //     }
+        //     */
+
+        //     //console.log(n);
+        //     n += 2;
+        // } 
+
+
+        // 3
+        const numberLoop3 = number => {
+            Number(number);
+            let startOfN = number - (number-1);
+            let answer = "";
+            do {
+                answer += "[" + startOfN + "]";
+                startOfN++;
+            } 
+            while (startOfN <= number);
+            return console.log(answer);
+        }
+        
+        numberLoop3(7);
+
+
+
+        // 4
+        //debugger;
+        const sumLoop4 = n => 
+        {
+            Number(n);
+            let startOfN = 1;
+            let increment = 0;
+            while (startOfN <= n)
+            {
+                // example: n=5
+                // 1=0+1, startOfN becomes 2
+                // 3=1+2, startOfN becomes 3
+                // 6=3+3, startOfN becomes 4
+                // 10=6+4, startOfN becomes 5
+                // 15=10+5, startOfN becomes 6 -> exits loop
+                increment += startOfN; 
+                startOfN++;
+            }
+            return increment;
+        }
+
+        console.log(sumLoop4(5));
+
+
+        
+        
+    </script>
+
+</body>
+
+</html>

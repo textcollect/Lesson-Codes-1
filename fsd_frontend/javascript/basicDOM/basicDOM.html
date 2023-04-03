@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Basic Javascript</title>
+
+   <style>
+       body {
+           background-color: white;
+       }
+
+
+       h1 {
+           color: darkorange;
+       }
+
+
+       .initialStyle {
+           width:300px;
+           height: 100px;
+           background-color: blue;
+           text-align: left;
+           font-size: 20px;
+           color:gray;
+       }
+
+
+       .changeStyle {
+           width:300px;
+           height: 100px;
+           background-color:indigo;
+           text-align: center;
+           font-size: 25px;
+           color:white;
+       }
+   </style>
+
+</head>
+
+<body>
+   <h1>Welcome to basic Javascript</h1>
+   <h2>Let's take a look at the example of accessing HTML elements in an HTML page</h2>
+
+
+   <section id="section1-intro">
+
+
+       <h3>Introduction to DOM</h3>
+
+
+       <ul class="htmlElements">
+           <li>Finding HTML Element by Id</li>
+           <li>Finding HTML Elements by Tag Name</li>
+           <li>Finding HTML Elements by Class Name</li>
+           <li>Finding HTML Element by CSS Selectors</li>
+       </ul>
+
+
+       <ul class="htmlElements">
+           <li>Finding HTML Element by Id</li>
+           <li>Finding HTML Elements by Tag Name</li>
+           <li>Finding HTML Elements by Class Name</li>
+           <li>Finding HTML Element by CSS Selectors</li>
+       </ul>
+
+
+   </section>
+
+
+   <h3>This is another Heading 3 and this is going red color</h3>
+
+
+   <h3>This is another Heading 3 that will be changed by JS</h3>
+
+
+   <h3>This is another Heading 3</h3>
+
+
+   <h3>This is another Heading 3</h3>
+
+
+   <section id="section2-update">
+       <h3>This is section 2</h3>
+      
+       <p>
+           <input type="text" id="username" value="Jean Looi">
+       </p>
+      
+       <div id="playerName">
+           <p>Hello Name</p>
+           <button text="submit" onClick="changeName()">Change the name!</button>
+       </div>
+
+
+       <div id="myDiv" class="initialStyle">
+           I am a DIV element
+       </div>
+
+
+       <a href="http://www.google.com">Click me to go w3Schools</a>
+
+       <div>
+        <button text="submit" onclick="editHTMLelements()">Click to change style of webpage</button>
+       </div>
+   </section>
+
+
+   <script src="basicScript.js">
+   </script>
+
+</body>
+
+</html>

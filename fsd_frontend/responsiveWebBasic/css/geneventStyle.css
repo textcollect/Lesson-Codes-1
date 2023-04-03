@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+
+
+/* Universal elements */
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body
+{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+/* Common CSS Style */
+
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+    color: #045d04;
+}
+
+.padding15 {
+    padding: 15px;
+}
+
+section
+{
+    display: flex;
+    width: 100%;
+}
+
+.section1 img {
+    width: 100%;
+}
+
+
+/* Set the "WHAT WE DO" division background color to be gray & 
+font color to white */
+.section1
+{
+    background-color: gray;
+    color: white;
+}
+
+/* Event Details background color to be lightgray */
+.events
+{
+    background-color: lightgray;
+    width: 50%;
+}
+
+/* Date boxes */
+/* 
+padding = 10px for all sides 
+bg color #262626
+text white
+width 20%
+align the text to center
+*/
+.datebox
+{
+    padding: 10px;
+    background-color: #262626;
+    color: white;
+    max-width: 20%;
+    text-align: center;
+    font-size: 25px;
+}
+
+.datebox span
+{
+    font-size: 25px;
+    color: antiquewhite;
+}
+
+/* Event details */
+/* 
+padding for top and bottom to 40px
+margin bottom to 60px
+border color #262626, solid, 2px */
+.details
+{
+    padding: 40px 0;
+    margin-bottom: 60px;
+    border: #262626 solid 2px;
+}
+
+/* "View Details" link to look like a button */
+/* 
+bg color = #199319
+font white
+padding 15px for top & bottom,
+25px for left & right
+remove underline */
+.details a
+{
+    background-color: #199319;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+}
+
+.details a:hover 
+{
+    background-color: #045d04;
+}
+
+
+footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+
+/* media query example
+max width 992px */
+@media screen and (max-width: 992px) {
+    
+    /* These styles will be applied if the screen size is <= 992px */
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {font-size: 25px;}
+    h2 {font-size: 20px;}
+    h3 {font-size: 15px; color: #045d04;}
+
+    .section1 img {
+        display: none;
+    }
+
+    .datebox {
+        padding: 30px;
+        max-width: 30%;
+    }
+}
+/* End of media */
+
+@media screen and (max-width: 768px) {
+    section {
+        color: red;
+    }
+}
