@@ -269,22 +269,34 @@ const displayCustomerForm = () => {
 */
 
 // ########################################################################
-// ########################################################################
-// ########################################################################
-// ########################################################################
-// ########################################################################
-// ########################################################################
 
 // Filter
+/*
+Array filter method creates and return a new array w all the element(s) tt
+pass the test (from the fn) when we call the filter method.
+
+filter method req a fn as the argument and runs the function on each array element
+*/
 
 const filterCustomerMForm = () => {
     // Create an array tt contains just the filtered elements
     const filterMembership = allCustomer.filter(element => element.membership == "Gold");
 
+    //const filterMembership = allCustomer.filter(checkMember); //returns array of elements (from allCustomer array) tt pass test from checkMember fn
+
     let custList = displayList(filterMembership);
 
     document.querySelector("#customerList > p").innerHTML = custList;
 }
+
+
+/*
+function checkMember(element) 
+{
+    return element.membership == "Gold";
+}
+*/
+
 
 
 // fn tt takes in the array to be used as parameter and returns the string on call
@@ -315,3 +327,36 @@ const filterCustomerSForm = () => {
 }
 // 1. Refactor above
 // 2. filter cust w spending > 1000 when click on the button
+
+/*
+Alternative from instructor
+
+const displayCust = customerArr => {
+    let custList = "";
+
+    for (let i = 0; i < customerArr.length; i++) 
+    {
+        custList += `
+        Customer Name = ${customerArr[i].name}, 
+        Membership = ${customerArr[i].membership}, 
+        Total Spending for the Month = ${customerArr[i].totalSpending}
+        <br/>
+        `;
+    }
+    document.querySelector("#customerList > p").innerHTML = custList;
+}
+
+
+function displayCustomerForm() {
+    displayCust(allCustomer); //argument is array
+}
+
+function filterCustomerMForm() {
+    // Create an array tt contains just the filtered elements
+    const filterMembership = allCustomer.filter(element => element.membership == "Gold");
+
+    //const filterMembership = allCustomer.filter(checkMember); //returns array of elements (from allCustomer array) tt pass test from checkMember fn
+
+    displayCust(filterMembership);
+}
+*/
