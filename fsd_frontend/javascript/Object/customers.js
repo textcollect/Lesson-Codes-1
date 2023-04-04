@@ -328,9 +328,12 @@ const filterCustomerSForm = () => {
 // 1. Refactor above
 // 2. filter cust w spending > 1000 when click on the button
 
+
+
 /*
 Alternative from instructor
 
+// Common function
 const displayCust = customerArr => {
     let custList = "";
 
