@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fetch API</title>
+</head>
+
+<body>
+
+    <section>
+        <div>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data">Website for more info</a>
+        </div>
+    </section>
+    
+    <script>
+        /*
+        to use fetch method to call an API and return data to display
+            - send or receive info
+        
+        fetch method follows the concept of Promises
+        - "Producing code" is code tt can take some time (e.g. calling an API to get the data from the data from the backend)
+        
+        - "Consuming code" is code tt must wait for the result (e.g. after 5 seconds, server response status code 200, 
+            and return the data to the frontend; or return 404/500 error, timeout)
+        */
+
+
+
+        /* Get data with fetch
+        Default http method is GET
+        If the request is successful, .then() method will be executed.
+        The data returned from the server will be represented by the response parameter
+        The response parameter w the data will be in JSON format
+        JS has to convert it into a known datatype (e.g. object, array, string, number, boolean)
+        Need to use .json() method to take in JSON as input and parse it to produce a JS object 
+        
+        If there are multiple .then() methods, the return value of the previous .then()
+        method will pass into the next .then() method
+        
+        JSON exists as a string — useful when you want to transmit data across a network. 
+        It needs to be converted to a native JavaScript object when you want to access the data.
+
+        Example for below:
+        return value of 1st .then() method is data in JSON format
+        info will be stored w the data in object format
+        */
+        
+        fetch("https://reqres.in/api/users?page=1")
+            .then(response => response.json())  //arrow fn is used here
+            .then(info => {
+                console.log(info);
+
+                // Display info on frontend
+            });
+
+    </script>
+</body>
+
+</html>
