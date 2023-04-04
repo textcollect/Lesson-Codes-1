@@ -330,6 +330,11 @@ const filterCustomerSForm = () => {
 
 
 
+// ########################################################################
+// ########################################################################
+// ########################################################################
+
+
 /*
 Alternative from instructor
 
@@ -346,6 +351,11 @@ const displayCust = customerArr => {
         <br/>
         `;
     }
+
+    //return custList;
+    //usual way is to return the value back to the caller 
+    //- meaning the line below this SHOULD NOT be here but in the function displayCustomerForm()
+    
     document.querySelector("#customerList > p").innerHTML = custList;
 }
 
@@ -358,6 +368,7 @@ function filterCustomerMForm() {
     // Create an array tt contains just the filtered elements
     const filterMembership = allCustomer.filter(element => element.membership == "Gold");
 
+    // Alternative to above
     //const filterMembership = allCustomer.filter(checkMember); //returns array of elements (from allCustomer array) tt pass test from checkMember fn
 
     displayCust(filterMembership);

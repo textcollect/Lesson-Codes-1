@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="navbar"></div>
+
+    <!-- Create your form here -->
+    <div class="container">
+        <form>
+            <h3>Travel Reservation Form</h3>
+            <div class="mb-4">
+                <label for="fullName">Full Name*</label>
+                <input type="text" class="form-control" id="fullName" aria-describedby="nameHelp" placeholder="Enter name" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="exampleInputEmail1">Email address*</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>       
+
+            <div class="form-group mb-4">
+                <label for="tourPackage">Select the Tour Package*</label>
+                <select class="form-control" id="tourPackage" required>
+                  <option value="">Please Select</option>
+                  <option value="japan">Japan</option>
+                  <option value="korea">Korean</option>
+                  <option value="australia">Australia</option>
+                  <option value="canada">Canada</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="dateArrival">Arrival Date*</label>
+                <input type="date" class="form-control" id="dateArrival" aria-describedby="dateHelp" required>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="numPax">Number of person (1 to 8):*</label>
+                <input type="number" id="numPax" min="1" max="8" required/>
+            </div>
+
+            <label>What would you like to experience during tour?</label>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="food" id="foodChk">
+                <label class="form-check-label" for="foodChk">
+                    Food
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="sightseeing" id="sightseeingChk">
+                <label class="form-check-label" for="sightseeingChk">
+                    Sightseeing
+                </label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" value="culture" id="cultureChk">
+                <label class="form-check-label" for="cultureChk">
+                    Culture
+                </label>
+            </div>
+
+            <label>Terms and Conditions:*</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radios" id="yesBtn" value="yes" required>
+                <label class="form-check-label" for="yesBtn">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="radio" name="radios" id="noBtn" value="no" required>
+                <label class="form-check-label" for="exampleRadios1">
+                  No
+                </label>
+              </div>
+              </div>
+
+              <button class="btn btn-primary mb-4" type="submit" onClick="getInput()">Submit Reservation</button>
+        </form>
+    </div>
+
+
+    <div id="footer"></div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function()
+      {
+        $( "#navbar" ).load( "common/navbar.html" );
+        $( "#footer" ).load( "common/footer.html" );
+    
+      });
+    </script>
+
+</body>
+</html>
