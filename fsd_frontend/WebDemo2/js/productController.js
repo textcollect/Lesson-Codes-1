@@ -40,6 +40,11 @@ const displayDetails = index => {
     document.querySelector("#modalImg").src = productList[index].imageURL;
     document.querySelector("#modalStyle").innerHTML = productList[index].style;
     document.querySelector("#modalPrice").innerHTML = productList[index].price;
+
+
+    //launch the productDetail page
+    //productList[index] pass it to the productDetail page to display
+    //using session storage to send & pass to page
 }
 
 // 3) Display all products when user launch the product.html page
