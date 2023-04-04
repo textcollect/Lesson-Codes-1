@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Array Methods</title>
+</head>
+
+<body>
+
+    <script>
+        const planets = ["Mars", "Earth", "Mercury", "Venus", "Jupiter"];
+
+        console.log(planets); //print out in array form. data type of array is Object
+
+        // toString() is a method/function provided by the built-in browser API
+        let planetsText = planets.toString();
+        console.log(planetsText);
+
+        // changing separator from "," to space
+        let planetsJoin = planets.join(" ");
+        console.log(planetsJoin);
+
+        planets.pop() //removes last element from array
+        // console.log(planets.pop()); //returns element removed from array. element becomes completely removed from the beginning
+        console.log(planets);
+
+        planets.push("Pluto"); // add new element to last element of array (opposite of pop)
+        console.log(planets);
+
+        planets.shift(); //removes first element
+
+        planets.unshift("Neptune"); // add new to first
+        console.log(planets);
+
+        // Add 2 planets (Jupiter, Mars) after Venus, and remove Pluto
+        planets.splice(4, 1, "Jupiter", "Mars");
+        console.log(planets);
+
+        // Slice - first number is start (inclusive), second is end (non-inclusive)
+        // i.e. start <= slice < end
+        const splitPlanets = planets.slice(2, 3);
+        console.log(splitPlanets);
+    </script>
+
+</body>
+
+</html>

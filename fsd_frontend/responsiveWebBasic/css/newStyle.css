@@ -1,0 +1,73 @@
+ /* Simple selectors (select elements based on name, id, class) */
+
+/* Selector based on tag (type) name */
+h2 {
+    color:brown;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(254, 209, 192);
+}
+
+h1 {
+    text-align: center;
+}
+
+
+/* Selector based on id - seldom used in css.
+id is often used in Javascript */
+#unordered1 {
+    color:blueviolet;
+    font-size: 20px;
+}
+
+#head2 {
+    color: aquamarine;
+}
+
+
+/* Selector based on class */
+.setColorRed {
+    color: red;
+}
+
+
+/* CSS Combinators Descendant Selector */
+/* Elements matched by the second selector are selected if they have an ancestor (parent, parent's parent, parent's parent's parent, etc.) element matching the first selector. */
+header p, header h2 {
+    background-color: aliceblue;
+}
+
+
+/* Child Selector */
+/* Matches only those elements matched by the second selector that are the direct children of elements matched by the first. Descendant elements further down the hierarchy don't match. */
+section > p {
+    background-color: aliceblue;
+}
+
+
+/* Unvisited link */
+a:link {
+    color: rgb(23, 244, 170);
+}
+
+/* Visited link */
+a:visited {
+    color: red;
+}
+
+/* mouse-over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+
+img {
+    max-width: 50rem;
+}

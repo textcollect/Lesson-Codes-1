@@ -1,0 +1,22 @@
+/* Your own customised CSS here */
+
+/* Media query here */
+@media screen and (max-width: 768px) 
+{
+    .myVideo iframe
+    {
+        width: 360px;
+        height: 115px;
+    }    
+
+    .imgScale img
+    {
+        width: 50%;
+    }
+
+    /* id is unique, so can use id of carousel directly */
+    #carouselExample
+    {
+        display: none;
+    }
+}

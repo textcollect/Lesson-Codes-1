@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-size: 22px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color:seashell;
+}
+
+
+/* Common Styles */
+h1 { font-size: 30px;}
+h2 { font-size: 28px;}
+h3 { font-size: 26px;}
+h4 { font-size: 24px;}
+h5 { font-size: 22px;}
+
+h1, h2, h3, h4, h5 {
+    padding: 15px;
+    font-weight: bold;
+}
+
+.width1200
+{
+    width: 1200px;
+}
+
+.width1000
+{
+    width: 1000px;
+}
+
+
+/* Logo and Nav to flex */
+header {
+    display: flex;
+    width: 100%;
+    height: 69px;
+    border-bottom: 1px solid seashell;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+    padding-left: 10px;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+nav > a {
+    color: seashell;
+    padding: 0px 10px;
+}
+
+/* Our Mission Section */
+.mission {
+    height: 700px;
+    /* background-image: url(https://content.codecademy.com/courses/freelance-1/unit-4/img-mission-background.jpg); */
+    background-image: url(../images/img-mission-background.jpg);
+    opacity: 0.9;
+    margin: auto; /* makes entire section centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mission > div {
+    background-color: black;
+    width: 100%;
+}
+
+/* Tea Section */
+.tea-section
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.tea-section-image
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tea-section-image img
+{
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+}
+
+.tea-section div, p
+{
+    padding: 10px;
+}
+
+
+/* Location */
+.location-section
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-image: url(../images/img-locations-background.jpg);
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.location-detail
+{
+    display: flex;
+    border: 1px solid red;
+}
+
+.location-detail div
+{
+    background-color: black;
+    width: 300px;
+    margin: 0 20px;
+
+}
+
+
+/* Additional */
+.location-detail p
+{
+    padding: 20px 0;
+}
+
+
+/* Contact and Footer */
+.contact
+{
+    height: 200px;
+}
+
+footer
+{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.sticky
+{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    background-color: black;
+}

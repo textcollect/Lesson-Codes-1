@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/myStyles.css">
+
+    <title>Bootstrap demo</title>
+  </head>
+
+  <body>
+    <h1>Hello, world!</h1>
+
+    <!-- Insert Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Insert Image Carousel -->
+    <div id="carousel"></div>
+
+    <!-- Insert content -->
+    <div id="content"></div>
+
+    <!-- for loading mainModal.html -->
+    <div id="mainModal"></div>
+
+    <!-- for loading footer.html -->
+    <div id="footer"></div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function()
+        {
+            $("#navbar").load("common/navbar.html");
+            $("#carousel").load("common/carousel.html");
+            $("#content").load("homepage/content.html");
+            $("#mainModal").load("common/mainModal.html");
+            $("#footer").load("common/footer.html");
+        }
+        );
+    </script>
+
+    
+
+    </body>
+</html>

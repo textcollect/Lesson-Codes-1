@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Functions</title>
+</head>
+
+<body>
+    <div>
+        <p>Input your weight and height to calculate your BMI</p>
+        <p>Weight (kg) 
+            <input type="number" id="weight" autocomplete="off" min="1" required>
+        </p>
+        <p>Height (cm)
+            <input type="number" id="height" autocomplete="off" min="1" required>
+        </p>
+        <!-- activates function calcBMI() which holds the calculations for BMI on clicking the button -->
+        <button onclick="calcBMI()">Calculate</button> 
+    </div>
+
+    <script>
+
+        // Variable Practice
+        // Practice 1: Variable Basic
+        let car = "Ferrari";
+        let myAge = 21;
+        let number1 = 38, number2 = 14;
+        let sum = number1 + number2;
+        let corn = "corn", flour = "flour", milk = "milk", apples = "apples";
+        
+        // Practice 2
+        var number_1 = 10;
+        var second = 5;
+        var boop = 7;
+
+        boop = boop + 22;
+        second = boop - second + 20;
+
+        var dab = number_1 + second + boop;
+        console.log(dab);
+
+        // Practice 3: Variables & Data Types
+        // Q1
+        /* let person = {
+            name: prompt(`Please enter your full name`),
+            location: prompt(`Where do you live in?`),
+            hobby: prompt(`What is your hobby?`),
+        }; 
+
+        function informationCard(name, loc, hobby) {
+            console.log(`Hi, my name is ${name}. I live in ${loc} and enjoy ${hobby}.`);
+        }
+        informationCard(person.name, person.location, person.hobby);
+        */
+
+        // Q2
+        let myBirth = 1988;
+        let futureYear = 2026;
+        let currentYear = new Date().getFullYear();
+        let possibleAge1 = futureYear - myBirth - 1;
+        let possibleAge2 = futureYear - myBirth;
+        console.log(`Your possible age is ${possibleAge1} or ${possibleAge2} depending on the month of the year.`)
+
+        // Q3
+        let maxAge = 80;
+        let coffeeDay = 1;
+        let totalCoffee = (maxAge - myAge) * 365 * coffeeDay;
+        console.log(`You will need ${totalCoffee} to last you until the ripe old age of ${maxAge}`)
+
+        // Q4
+        function calcBMI() {
+            const weightBMI = document.querySelector("#weight").value;
+            const heightBMI = document.querySelector("#height").value;
+            let bmi = (weightBMI/heightBMI/heightBMI)*10000;
+
+            // create new element under <div> using appendChild()
+            const newP = document.createElement("p");
+            newP.textContent = `Your BMI is ${bmi.toFixed(2)}`;
+            document.querySelector("div").appendChild(newP);
+        }
+        
+        // End of Variables Practice
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+
+
+        // Functions Practice
+        // function that prints out “Hello World”.
+        function hello() {
+            console.log(`Hello World`);
+        }
+
+        //debugger;
+        
+        // function that adds two numbers together
+        function add2() {
+            const numb1 = prompt(`Enter first number`);
+            const numb2 = prompt(`Enter second number`);
+
+            const total = Number(numb1) + Number(numb2);
+            console.log(`Total is: ${total}`);
+        }
+
+        // function that prints the length of a word
+        function printLength() {
+            const word = prompt(`Please enter word here`);
+            return word.length;
+        }
+        //console.log(`word length: ${printLength()}`);
+
+        const printLength2 = (word) => console.log(`word length: ${word.length}`);
+
+        /* const person = {
+            name: prompt(`Please enter your full name`),
+            location: prompt(`Where do you live in?`),
+            hobby: prompt(`What is your hobby?`),
+        }; */
+
+        function informationCard(name, loc, hobby) {
+            return `Hi, my name is ${name}. I live in ${loc} and enjoy ${hobby}.`;
+        }
+        //informationCard(person.name, person.location, person.hobby);
+        //console.log(informationCard(person.name, person.location, person.hobby))
+
+        // Calculator
+        /* 
+        let numb1 = prompt(`Enter first number`);
+        numb1 = Number(numb1);
+
+        let numb2 = prompt(`Enter second number`);
+        numb2 = Number(numb2); 
+        */
+
+        function add(a, b) {
+            let total = a + b;
+            console.log(`Total is: ${total}`);
+        }
+
+        function subtract(a, b) {
+            let total = a - b;
+            console.log(`Total is: ${total}`);
+        }
+
+        function multiply(a, b) {
+            let total = a * b;
+            console.log(`Total is: ${total}`);
+        }
+        
+        function divide(a, b) {
+            if(a < b){
+                let total = b % a;
+                console.log(`Remainder is: ${total}`);
+            }
+            else {
+                let total = a / b;
+                console.log(`Total is: ${total}`);
+            }
+        }
+
+
+
+        // Practice 3: Declare and use functions
+        // 1
+        function costs(transaction) {
+            let toPay = transaction + 3 + (transaction * 0.01);
+            console.log(`Maria's transaction cost is $${transaction}, and she needs to pay $${toPay}.`)
+        }
+        
+        // 2.1
+        //let friend = [prompt(`Enter name of friend #1`), prompt(`Enter name of friend #2`), prompt(`Enter name of friend #3`)];
+        function greeting(name1, name2, name3) {
+            console.log(`Welcome ${name1}, ${name2}, ${name3}.`);
+        }
+
+        //greeting(friend[0], friend[1], friend[2]);
+
+
+        // 2.2
+        //const birthYear = prompt(`Which year were you born in?`);
+
+        function age(yearBorn) {
+            const currentYear = new Date().getFullYear();
+            const currentAge = currentYear - Number(yearBorn);
+
+            return `Your age is ${currentAge} years old.`;
+        }
+        //console.log(age(birthYear));
+
+
+        // 2.3
+        function greeting2(name1, name2, name3, age1, age2, age3) {
+            return `Welcome ${name1}, you are ${age1}. Welcome ${name2}, you are ${age2}. Welcome ${name3}, you are ${age3}.`; //return this string
+        }
+
+        /*
+        let friend = {
+            names: [prompt(`Enter name of friend #1`), prompt(`Enter name of friend #2`), prompt(`Enter name of friend #3`)],
+            birth: [prompt(`Enter birth year of friend #1`), prompt(`Enter birth year of friend #2`), prompt(`Enter birth year of friend #3`)],
+            // Use map() to convert each element of birth array to a number
+            birth2: function() {return this.birth.map(Number)},
+            currentYear: new Date().getFullYear(),
+            age: function() {
+                let ages = [];
+
+                // Use this to refer to the properties of the friend object
+                for (let i = 0; i < this.birth2().length; i++) {
+                    // Subtract the birth year from the current year and push to ages array
+                    ages.push(this.currentYear - this.birth2()[i]);
+                }
+                
+                // Return the ages array
+                return ages;
+            },
+        };
+
+        console.log(greeting2(friend.names[0], friend.names[1], friend.names[2], friend.age()[0], friend.age()[1], friend.age()[2]));
+        */
+
+
+        // 3 - Puppy Age Calculator: Calculate your dog age in human years.
+        const calculateDogAge = (dogAge) => {
+            const humanAge =  (Number(dogAge) / 7);
+            const resultPrint = `Your doggie is ${humanAge} years old in human years!`;
+            
+            return resultPrint;
+        };
+
+        console.log(calculateDogAge(14));
+        console.log(calculateDogAge(21));
+        console.log(calculateDogAge(7));
+
+
+
+        // 4 - 2 functions that calculate properties of a circle.
+        //Formula for circumference: Math.PI * 2*radius
+        //Formula for Area: Math.PI * radius*radius
+        const calcCircumfrence = (radius) => {
+            const result = Math.PI * radius * 2;
+            const resultPrint = `The circumference is ${result.toFixed(3)}.`
+
+            return resultPrint;
+        };
+
+        const calcArea = (radius) => {
+            const result = Math.PI * radius * radius;
+            const resultPrint = `The area is ${result.toFixed(3)}`;
+
+            return resultPrint;
+        };
+
+        console.log(calcCircumfrence(21));
+        console.log(calcArea(21));
+
+        // End of function practice
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+        // ########################################################################
+
+
+
+
+        // 1. Standard function - w/o parameter and w/o return statement
+        function calculateTax() {
+            // 1) Create all required variables in the function - NOT RECOMMENDED
+            const monthlyIncome = 1200;
+            const bonus = 100;
+            const parent = 200;
+            const child = 0;
+            const NS = 0;
+            const CPF = 100;
+
+            // 2) calculate total income
+            let totalIncome = monthlyIncome * 12 + bonus;
+            console.log(`Your total income is ${totalIncome}.`);
+
+            // 3) calculate relief
+            let relief = parent + child + NS;
+            console.log(`Your total relief is ${relief}.`);
+
+            // 4) calculate tax
+            let tax = (totalIncome / 20) * CPF - relief;
+            console.log(`Your tax payment amount is ${tax}.`);
+        }
+
+        // e.g. to call the function using a button click
+        calculateTax(); // calling the function
+
+
+
+        // 2. Standard function - with parameter and with return statement
+        // When user clicks on a button, we will call the getInput() function
+        function getInput() {
+            // 1) Getting inputs from the 100 users
+            // const monthlyIncome = document.querySelector("#monthlyIncome").value;
+            
+            const monthlyIncome = 1200;
+            const bonus = 100;
+            const parent = 200;
+            const child = 0;
+            const NS = 0;
+            const CPF = 100;
+
+            // Input validation
+            // Check certain conditoins (e.g. NS?, How many children?)
+
+            // call another function to do the calculation - not using object
+            // usually store all data into a Global Object
+            // when it is called from JS code
+            calculateTax2(monthlyIncome, bonus, parent, child, NS, CPF); //6 arguments
+
+            // return
+        }
+
+        // function parameters are listed inside the parantheses () in the function definition
+        function calculateTax2(monthly, extra, taxRelief1, taxRelief2, taxRelief3, CPF) {
+            
+            // 2) calculate total income
+            let totalIncome = monthly * 12 + extra;
+            console.log(`Your total income is ${totalIncome}.`);
+
+            // 3) calculate relief
+            let relief = taxRelief1 + taxRelief2 + taxRelief3;
+            console.log(`Your total relief is ${relief}.`);
+
+            // 4) calculate tax
+            let tax = (total / 20) * CPF - relief;
+            console.log(`Your tax payment amount is ${tax}.`);
+        }
+
+
+
+
+        // Function Expression
+
+        // a.k.a anonymous function
+        // a & b are the parameters
+        //const x = function(a, b) {return a * b};
+        //let y = x(12, 2);
+
+        
+        // Arrow Functions
+        // ES5
+        //var x = function(x, y) {return x * y};
+
+        // ES6
+        const x = (x, y) => {return x * y};
+
+
+
+
+
+        // Hoisting
+        a = 5; // Assign 5 to a
+        var a; // Declare a
+
+
+
+        
+    </script>
+    
+</body>
+</html>

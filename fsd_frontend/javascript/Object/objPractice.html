@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add/Search Customers system</title>
+</head>
+
+<body>
+
+    <script>
+        // Practice 3: Basic Operations
+        let cumulativeGPA=2.0, totalUnits=120, cspGrade=75;
+
+        if (cumulativeGPA > 2.0 && totalUnits >= 120) 
+        {
+            console.log("You can graduate!");
+        }
+
+        if (cspGrade >= 75 || progGrade >= 75) 
+        {
+            console.log("You're eligible for graduation!");
+        }
+
+        if (!(cumulativeGPA > 2.0 && totalUnits >= 120)) 
+        {
+            //We do not do the if statement with no action
+            sendEmail();
+        } 
+        else 
+        {
+            null;
+        }
+
+        function sendEmail() {
+            console.log(`send email`);
+        }
+
+    // ########################################################################
+    // ########################################################################
+    // ########################################################################
+    // ########################################################################
+    // ########################################################################
+    // ########################################################################
+
+        // Practice 5: Operators and Expressions
+        var names = ["Maria", "Antony", "Joy", "Juan"];
+
+        const addName = name => names.push(name);
+
+        //addName("Tom");
+        //console.log(names);
+
+        // Part 2
+        const checkName = name => {
+            name = name.toLowerCase();
+            let position = names.toString().toLowerCase().indexOf(name);
+            let check = (position >= 0) ? true : false;
+            return check;
+        }
+
+        var result2 = checkName("maria");
+        console.log(result2);
+
+
+        // Part 2 Alternative
+        const checkName2 = name => {
+            let i = 0, check = false;
+            
+            while (i < names.length) {
+                if (name.toLowerCase() == names[i].toLowerCase()) {
+                    check = true;
+                    break; //break the loop if true, else continue
+                }
+                i++;
+            }
+            return check;
+        }
+        
+        /* for (let i = 0; i < customerList.length; i++) {
+            if (name.toLowerCase() == customerList[i].toLowerCase()) {
+                isNameExist = true;
+                break; //go out of for loop
+            }
+        } 
+        */
+        console.log(checkName2("maria"));
+
+
+        // Part 3
+        const sameNames = nameList => {
+            const result = nameList.filter(checkName2);
+            return result;
+        }
+
+        var newList = ["tom", "Maria", "joy"];
+        console.log(sameNames(newList));
+
+
+        // Part 4 
+        //Write a function that takes in a list of names and 
+        //returns a list of Integers with the length of the names 
+        //in the same order as received.
+        const nameLength = nameList => {
+            for (let i = 0; i < nameList.length; i++) {
+                nameList[i] = nameList[i].length;
+            }
+            return nameList;
+        }
+
+        var newList2 = ["Maria", "Joy", "Tom", "Peter"];
+        console.log(nameLength(newList2));
+
+
+
+    </script>
+</body>
+
+</html>

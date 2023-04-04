@@ -1,0 +1,117 @@
+/* box sizing */
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Common Styles */
+/* Font colors for different section
+Font sizes
+margin, padding
+alignment */
+.fontColorHeading
+{
+    color: white;
+}
+
+.fontColorContent
+{
+    color: black;
+}
+
+.paddingHeading
+{
+    padding: 60px;
+}
+
+.paddingContent
+{
+    padding: 20px;
+}
+
+
+/* 
+Header
+bg color #1abc9c
+text color white
+align text center
+all padding 60px */
+
+header
+{
+    background-color: #1abc9c;
+    text-align: center;
+}
+
+
+/* Nav
+overall bg color #333
+
+Nav Link
+- text color to #fff
+- padding top & bottom = 14px, left & right = 20px
+- align text center
+- remove link underline
+
+Hover over Nav
+- bg color #ddd
+- text color #000*/
+nav
+{
+    display: flex;
+    background-color: #333;
+}
+
+nav a
+{
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    background-color: #ddd;
+    color: black;
+}
+
+main
+{
+    display: flex;
+}
+
+aside
+{
+    flex-basis: 30%;
+    background-color: #f1f1f1;
+}
+
+
+/* Will need to replace with own images */
+.fakeimg, .fakeimg2
+{
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0px;
+}
+
+
+@media screen and (max-width: 720px) 
+{
+    nav
+    {
+        flex-direction: column;
+    }    
+
+    aside 
+    {
+        display: none;
+    }
+}
