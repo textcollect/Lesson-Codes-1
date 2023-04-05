@@ -1,0 +1,23 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "Practice on npm and Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyxt1212/Lesson-Codes-1.git"
+  },
+  "author": "Eve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tyxt1212/Lesson-Codes-1/issues"
+  },
+  "homepage": "https://github.com/tyxt1212/Lesson-Codes-1#readme",
+  "dependencies": {
+    "clear-screen": "^1.0.0",
+    "prompt-sync": "^4.2.0"
+  }
+}
