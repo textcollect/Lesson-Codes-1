@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Show User Details</title>
+</head>
+
+<body>
+
+    <section>
+        <div>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage">Website for more info on web storage API</a>
+            <br/><br/>
+        </div>
+    </section>
+
+    <section id="eachUser">
+        <ul>
+            <p id="userId"></p>
+            <p id="userFirstName"></p>
+            <p id="avatar"></p>
+        </ul>
+        
+    </section>
+    
+    <script>
+        //Get user information from the local storage and display in the <p>
+        //Local Storage is storing the string of user information
+        //Need to convert the string back to object to display
+
+        const getUser = localStorage.getItem("myUser");
+        const convertUser = JSON.parse(getUser);
+        
+        document.querySelector("#userId").innerHTML = convertUser.id;
+        document.querySelector("#userFirstName").innerHTML = convertUser.first_name;
+        document.querySelector("#avatar").innerHTML = convertUser.avatar;
+
+    </script>
+</body>
+
+</html>

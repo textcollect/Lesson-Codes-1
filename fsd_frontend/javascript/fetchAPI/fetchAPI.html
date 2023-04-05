@@ -18,6 +18,10 @@
             <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data">Website for more info on fetch API</a>
         </div>
     </section>
+
+    <section id="customer">
+        
+    </section>
     
     <script>
         /*
@@ -41,6 +45,8 @@
         JS has to convert it into a known datatype (e.g. object, array, string, number, boolean)
         Need to use .json() method to take in JSON as input and parse it to produce a JS object 
         
+        response from the server includes status code e.g. 200, 404, 500, etc.
+
         If there are multiple .then() methods, the return value of the previous .then()
         method will pass into the next .then() method
         
@@ -52,14 +58,87 @@
         info will be stored w the data in object format
         */
         
+        let allUser = {};
+
         fetch("https://reqres.in/api/users?page=1")
-            .then(response => response.json())  //arrow fn is used here
-            .then(info => {
+            .then(response => response.json())  //arrow fn is used here; implied return
+            .then(info => {     //info is object datatype of response.json
                 console.log(info);
 
                 // Display info on frontend
+                displayUser(info);  //info is the object tt contain the array of data
+
+                console.log(typeof(info.data[0]));
+
+                allUser = info;
+                console.log(allUser.data[0]);
             });
 
+        const displayUser = info => 
+        {
+            /*
+            <table style="border: 1px solid;">
+                <tr>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Avatar</th>
+                </tr>
+                <tr>
+                    <td>jean@gmail.com</td>
+                    <td>jean</td>
+                    <td>looi</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>tom@gmail.com</td>
+                    <td>tom</td>
+                    <td>tan</td>
+                    <td></td>
+                </tr>
+            </table>
+            */
+
+           let display = "";
+
+           display += `
+                <table style="border: 1px solid;">
+                    <tr>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Avatar</th>
+                    </tr>`;
+            
+           for (let i = 0; i < info.data.length; i++) 
+           {
+                display += `
+                    <tr>
+                        <td>${info.data[i].email}</td>
+                        <td>${info.data[i].first_name}</td>
+                        <td>${info.data[i].last_name}</td>
+                        <td><a href="showUserDetail.html" onClick="displayDetails(${i})">
+                            <img src="${info.data[i].avatar}"></img>
+                            </a></td>
+                    </tr>`;
+           } //End of For-Loop
+
+           //Close the table
+           display += `</table>`;
+
+           //Add to document using queryselector
+           document.querySelector("#customer").innerHTML = display;
+        } //End of displayUser fn
+
+
+        const displayDetails = index =>
+        {
+            //Store the selected user information into the localstorage
+            localStorage.removeItem("myUser");
+
+            //Local Storage needs to store info as a string
+            localStorage.setItem("myUser", JSON.stringify(allUser.data[index]));
+        }
     </script>
 </body>
 
