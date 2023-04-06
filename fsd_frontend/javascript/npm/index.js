@@ -1,6 +1,8 @@
+// run in terminal: npm i prompt-sync
 // provides prompt() function to prompt for input and store into a variable
 var prompt = require('prompt-sync')({sigint: true});
 
+// run in terminal: npm i clear-screen
 // provides clear() fn to Clear your console buffer
 const clear = require('clear-screen'); 
 
@@ -114,3 +116,5 @@ const startGame = () =>
 
 generateField(); //Call to generate 2D array field
 startGame(); //Call to start game
+
+// type in console to run: node index.js
