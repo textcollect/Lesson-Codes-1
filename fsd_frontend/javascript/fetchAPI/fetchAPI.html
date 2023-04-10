@@ -63,12 +63,12 @@
         fetch("https://reqres.in/api/users?page=1")
             .then(response => response.json())  //arrow fn is used here; implied return
             .then(info => {     //info is object datatype of response.json
-                console.log(info);
+                console.log(info);  //Object datatype
 
                 // Display info on frontend
                 displayUser(info);  //info is the object tt contain the array of data
 
-                console.log(typeof(info.data[0]));
+                console.log(typeof(info.data[0])); //Also object datatype
 
                 allUser = info;
                 console.log(allUser.data[0]);
