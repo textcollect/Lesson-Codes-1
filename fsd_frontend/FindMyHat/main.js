@@ -13,14 +13,13 @@ const row = 10;
 const col = 10;
 const field = []; //create an empty array first
 
-let x1 = Math.floor((Math.random() * 10)); //random number from 0 to 10
-let x2 = Math.floor((Math.random() * 10) + 1); //random number from 1 to 10
-
+// Global variables for indexes to put hat in
 let hatRow = Math.floor((Math.random() * 10)), hatCol = Math.floor((Math.random() * 10));
 
-let index1 = 0, index2 = 0; //initialise values for the 2d array
+//initialise values for the 2d array - 1 & 2 is for character, 3 & 4 is to put back the field
+let index1 = 0, index2 = 0, index3 = 0, index4 = 0; 
 
-let getHat = "";
+
 
 // function to generate the field
 const generateField = () => 
@@ -38,18 +37,18 @@ const generateField = () =>
         }
     } //End of nested for-loop
 
-    
-
 } //End of generateField function
 
 
-// fn to generate holes & hat
-const holeGenerator = () =>
+// function to generate holes, hat & character
+const specialGenerator = () =>
 {
     let i = 0;
 
     // while loop to generate holes randomly
-    while (i < Math.floor((Math.random() * 100) + 1))
+    // Math.floor((Math.random() * (row * col -1)) + 1) will make the loop go for 99 times at most which is less than the field generated
+    // each time the loop starts, a hole will be generated at a random row and column from 0 to 10
+    while (i < Math.floor((Math.random() * (row * col -1)) + 1))
     {
         field[Math.floor((Math.random() * 10))][Math.floor((Math.random() * 10))] = hole;
         i++;
@@ -66,15 +65,17 @@ const holeGenerator = () =>
         hatRow++;
         field[hatRow][hatCol] = hat;
     }
+
+    //Character generation
+    field[0][0] = pathCharacter;
 }
 
-// fn to print out the field in the console
+
+// function to print out the field in the console
 const print = () =>
 {
     // Clear console buffer first
     clear();
-
-    field[0][0] = pathCharacter;
 
     const displayField = field.map(row =>
         {
@@ -85,66 +86,52 @@ const print = () =>
     console.log(displayField);
     //console.log(typeof(displayField)); //string
 
-    //console.log(field.indexOf(hat));
-    //getHat = displayField.toString().replace('\n', '');
-
 }
 
 
-// movement function takes in current index values and returns updated values
-const movement = (doYouKnowTheWay, index1, index2) =>
-{
-    
-
-    //Change array element depending on user input
-    if (doYouKnowTheWay == 'u')
-    {
-        index1--;
-    }
-    else if (doYouKnowTheWay == 'd')
-    {
-        index1++;
-    }
-    else if (doYouKnowTheWay == 'l')
-    {
-        index2--;
-    }
-    else if (doYouKnowTheWay == 'r')
-    {
-        index2++;
-    }
-
-    return [index1, index2]; // Return an array containing both values
-
-}
 
 // function to prompt for user input
 const askQuestion = () =>
 {
     const doYouKnowTheWay = prompt('Which way? ').toLowerCase();
 
-
-    if (!(doYouKnowTheWay == 'u' || doYouKnowTheWay == 'd' || doYouKnowTheWay == 'l' || doYouKnowTheWay == 'r'))
+    //Change array element depending on user input
+    switch (doYouKnowTheWay)
     {
-        console.log("Enter (u, d, l or r)");
-        askQuestion();
-    }
-    else
-    {
-        [index1, index2] = movement(doYouKnowTheWay, index1, index2);
+        case 'u':
+            index3 = index1;
+            index4 = index2;
+            index1--;
+            break;
 
-        if (field[index1][index2] == hole)
-        {
-            console.log("Sorry, you fell down a hole!");
-            isPlaying = false;
-        }
-        else
-        {
-            field[index1][index2] = pathCharacter;
-        }
-        
-    }
-}
+        case 'd':
+            index3 = index1;
+            index4 = index2;
+            index1++;
+            break;
+
+        case 'l':
+            index3 = index1;
+            index4 = index2;
+            index2--;
+            break;
+
+        case 'r':
+            index3 = index1;
+            index4 = index2;
+            index2++;
+            break;
+
+        default:
+            index1, index2, index3, index4;
+            console.log("Enter (u, d, l or r)");
+            askQuestion();
+            break;
+    } //End of switch-case
+
+    return [index1, index2, index3, index4]; // Return an array containing the index values   
+} //End of askQuestion()
+
 
 const startGame = () =>
 {
@@ -153,10 +140,11 @@ const startGame = () =>
     while (isPlaying)
     {
         print();
+        askQuestion();
 
-        if (index1 == hatRow && index2 == hatCol)
+        if (index1 < 0 || index1 > 10 || index2 < 0 || index2 >10 )
         {
-            console.log("Congrats, you found your hat!");
+            console.log("Out of bounds - Game End!");
             isPlaying = false;
         }
         else if (field[index1][index2] == hole)
@@ -164,18 +152,19 @@ const startGame = () =>
             console.log("Sorry, you fell down a hole!");
             isPlaying = false;
         }
-        else if (index1 < 0 || index1 > 10 || index2 < 0 || index2 >10 )
+        else if (index1 == hatRow && index2 == hatCol)
         {
-            console.log("Out of bounds - Game End!");
+            console.log("Congrats, you found your hat!");
             isPlaying = false;
         }
         else
         {
-            askQuestion();
+            field[index1][index2] = pathCharacter;
+            field[index3][index4] = fieldCharacter;
         }
     }
 }
 
 generateField();
-holeGenerator();
+specialGenerator();
 startGame();
