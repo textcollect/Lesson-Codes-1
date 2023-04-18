@@ -1,5 +1,7 @@
 package Collections;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class CollectionDemo {
 	public static void main(String[] args) {
@@ -39,6 +41,9 @@ public class CollectionDemo {
 		countryCode[1] = 60;
 		countryCode[2] = 66;
 
+		arrayList();
+		hashmap();
+		hashset();
 	}
 
 	public static void arrayList() {
@@ -47,10 +52,17 @@ public class CollectionDemo {
 		1. Website will retrieve all customer info from db and display on screen
 		2. Admin needs to do frequent search from a list of customer via ID to retrieve the info
 		3. Admin can add new customer to the list, then add to db
+
+		bulk upload to db: store into a collection first then upload to db
+
+		When to use ArrayList
+		- for adding elements or values at the end of the list (no removal or insertion in middle of ArrayList)
 		 */
 
 		// Data type of the elements need to be identified in <> when declaring
 		// Default size is 10
+		// ArrayList has methods to perform operations on the elements (add, remove, edit)
+		// able to take in duplicate values
 		// Note: data type of the ArrayList itself is list
 		ArrayList<String> cars = new ArrayList<String>(2); //create an ArrayList object
 		cars.add("Volvo"); //Recall that a quoted string is translated into a String object
@@ -72,7 +84,7 @@ public class CollectionDemo {
 		// Primitive data types (int, boolean, double, char, etc) cannot be declared w ArrayList
 		// ArrayList elements are objects. Referring to above: Recall that a quoted string is translated into a String object
 		// To declare ArrayList w Primitive data type, need to use Wrapper class
-		ArrayList<Integer> age = new ArrayList<Integer>();
+		ArrayList<Integer> age = new ArrayList<>();
 
 		// 18 is primitive data type
 		// add method is able to perform "Autoboxing" - primitive to object conversion
@@ -87,9 +99,93 @@ public class CollectionDemo {
 		System.out.println(age);
 
 		int sum = 0;
+		for (Integer integer : age) {
+			sum += integer;
+		}
+		/*
 		for (int i = 0; i < age.size(); i++) {
 			sum += age.get(i);
 		}
+		 */
 		System.out.println("The sum is: " + sum);
+	}
+
+
+	public static void hashset() {
+		/*
+		Hashset
+		Store the data w/o dupes (store unique elements)
+		Creates a collection that uses a hash table for storage.
+		- A hash table stores information by using a mechanism called hashing.
+		- In hashing, the informational content of a key is used to determine a unique value,
+		called its hash code.
+		- The hash code is then used as the index at which the data associated with the key is stored
+
+		Note:
+		It is important to note that HashSet does not guarantee the order of its elements,
+		because the process of hashing doesn't usually lend itself to the creation of sorted sets.
+		If you need sorted storage, then another collection, such as TreeSet, is a better choice.
+
+		Requirement:
+		- Jean: Jogging, Cycling, Marathon
+		- Mary: Cycling, Swimming
+		- John: Marathon
+		Get all activities Jean, Mary and John undertake
+		 */
+
+		HashSet<String> activities = new HashSet<>();
+		activities.add("Jogging");
+		activities.add("Cycling");
+		activities.add("Marathon");
+		activities.add("Swimming");
+		activities.add("Jogging");
+
+		System.out.println(activities);
+
+		System.out.println(activities.contains("Swimming"));
+
+		activities.remove("Marathon");
+		System.out.println(activities);
+
+		//Hashset<Integer> uniqueAge = new Hashset<>();
+
+	}
+
+
+	public static void hashmap() {
+		/*
+		Hashmap
+		- Used to store key-value pairs: make use of the key to retrieve the value with more efficiency
+		- Key has to be unique
+		- e.g. Store the state abbreviation key and state name in Hashmap
+		States:
+			"TN": "Tennessee"
+			"CA": "California"
+			"NY": "New York"
+			"FL": "Florida"
+
+			customer1 = {name: "Jean Looi", age: 18, address: "Yishun"}
+			customer2 = {name: "Jean Looi", age: 18, address: "Punggol"}
+
+			"1001": customer1
+			"1002": customer2
+		 */
+		HashMap<String, String> states = new HashMap<>();
+
+		states.put("TN", "Tennessee");
+		states.put("CA", "California");
+		states.put("NY", "New York");
+		states.put("FL", "Florida");
+		states.put("FL", "FFF");
+
+		System.out.println(states);
+
+		// get value of key
+		System.out.println(states.get("NY"));
+
+		// remove key
+		states.remove("FL");
+		System.out.println(states);
+
 	}
 }
