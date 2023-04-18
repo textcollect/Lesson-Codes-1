@@ -107,7 +107,7 @@ class Practice2 {
 		HashSet<String> months = new HashSet<>();
 
 		// Get an array of all the month names
-		String[] monthSet = DateFormatSymbols.getInstance().getMonths();
+		String[] monthSet = new DateFormatSymbols().getMonths();
 
 		// Add each month name to the HashSet
 		for (int i = 0; i < monthSet.length; i++) {

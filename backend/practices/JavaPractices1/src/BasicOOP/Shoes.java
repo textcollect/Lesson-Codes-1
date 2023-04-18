@@ -1,9 +1,19 @@
 package BasicOOP;
 
-public class Shoes {
+class Shoes {
 	// Properties of the Class (aka Attributes/instance variables)
 	// private makes the instance variable inaccessible to other classes
 	//unless there is Getter and Setter methods
+
+	// Access modifier/specifier: public, private, protected
+	// protected:
+	// diff package, non-subclass -> no access
+	// diff package, subclass -> has access
+	// same package, non-subclass; same package, subclass; same class -> has access
+
+	// default:
+	// diff package, non-subclass; diff package, subclass -> no access
+	// same package, non-subclass; same package, subclass; same class -> has access
 	private double size;
 	private String color;
 
@@ -77,5 +87,7 @@ class ShoesClient {
 		// Change sandal size to 6
 		sandal.setSize(6);
 		System.out.println("New sandal size: " + sandal.getSize());
+
+
 	}
 }
