@@ -2,6 +2,8 @@ package Composition.CourseService;
 
 import java.util.HashMap;
 
+// CourseService, which is a composite class, 'Has' Course & Student class
+// +: public; #: protected; -: private
 public class CourseService {
 	private HashMap<String, Student> students;
 	private HashMap<String, Course> courses;
@@ -30,16 +32,31 @@ public class CourseService {
 
 	public void addCourse(String name,String id, int credit) {
 		//TODO - To add new courses to the courses HashMap
+		// Create new Course object to add to HashMap
 		Course course = new Course(name, id, credit);
 		this.courses.put(course.getId(), course);
 	}
 
-	public Course findCourse(String id) {
-		//TODO - To be able to return a Course with the courseid passed in as the parameter
-		return this.courses.get(id);
+	public HashMap<String, Course> getCourse() {
+		return this.courses;
 	}
 
-	public void enrollStudent(String studentId, String courseId) {
+	public Course findCourse(String id) {
+		//TODO - To be able to return a Course with the courseid passed in as the parameter
+		// Check if id exist in courses hashmap
+		// return `this.courses.get(id)` if exist, else return null
+		if (this.courses.containsKey(id)) {
+			return this.courses.get(id); //returns a `Course` object
+		}
+		return null;
+	}
+
+	public void addStudent(String id, String name) {
+		Student student = new Student(name, id);
+		this.students.put(id, student);
+	}
+
+	public void enrollCourseToStudent(String studentId, String courseId) {
 		//TODO To enroll student to the course with the studentId and courseId passed
 		// in as the parameters
 
@@ -49,11 +66,21 @@ public class CourseService {
 		// the next line means to use the Student object returned from `this.students.get(studentId)`
 		//as the entry into the Student class to access the `enroll(Course course)` method to enroll the student into the course
 		// Reference to the above method where `findCourse(String id)` returns a Course object
+
 		this.students.get(studentId).enroll(findCourse(courseId));
-		//this.students.put(studentId, this.students.get(studentId)); //not needed if student is already in the hashmap
+
+		/*
+		if (this.students.containsKey(studentId)) {
+			this.students.get(studentId).enroll(findCourse(courseId));
+		}
+
+		Student getStudent = this.student.get(studentId);
+		Course getCourse = findCourse(courseId);
+		getStudent.enroll(getCourse);
+		 */
 	}
 
-	public void unEnrollStudent(String studentId, String courseId) {
+	public void unEnrollCourseToStudent(String studentId, String courseId) {
 		//TODO To unenroll student from the course with the studentId and courseId passed in as the parameters
 		// look into explanation in `enrollStudent` method above for explanation of the line below
 		this.students.get(studentId).unEnroll(findCourse(courseId));
@@ -70,7 +97,6 @@ public class CourseService {
 		// NOTE: Reference to explanation in `enrollStudent` method above to understand the code below
 		return this.students.get(studentId).totalEnrollmentCourses();
 	}
-
 
 	public int totalCredit(String studentId)
 	{
