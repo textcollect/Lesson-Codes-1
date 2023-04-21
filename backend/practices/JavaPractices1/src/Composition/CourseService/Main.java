@@ -17,5 +17,8 @@ public class Main {
 		} else {
 			System.out.println("Course not found!");
 		}
+
+		courseService.updateStudentName("111", "Jim Looi");
+		System.out.println(courseService);
 	}
 }

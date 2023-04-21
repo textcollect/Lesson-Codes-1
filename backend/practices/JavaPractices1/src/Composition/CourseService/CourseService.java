@@ -111,6 +111,10 @@ public class CourseService {
 		return totalCredit;
 	}
 
+	public void updateStudentName(String studentId, String newName) {
+		this.students.get(studentId).setName(newName);
+	}
+
 	public String toString() {
 		String courseTitle = "Courses offered from Jean's Learning Centre: \n";
 		String studentTitle = "Students registered to Jean's Learning Centre: \n";

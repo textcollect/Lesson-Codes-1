@@ -1,0 +1,115 @@
+Student
+CourseService
+StudentService
+
+src/com/generation/java/Main.java
+src/com/generation/utils/PrinterHelper.java
+
+src/com/generation/model/Course.java
+src/com/generation/model/EnrolledCourse.java
+src/com/generation/model/Module.java
+src/com/generation/model/Person.java
+src/com/generation/model/Student.java
+
+src/com/generation/service/CourseService.java
+src/com/generation/service/StudentService.java
+
+
+
+Course -> EnrolledCourse
+
+Course.java
+private final String code;
+private final String name;
+private final int credits;
+private final Module module;
+
+public Course(String code, String name, int credits, Module module)
+public String getCode()
+public String getName()
+public int getCredits()
+public Module getModule()
+public String toString()
+
+
+
+EnrolledCourse.java extends Course
+private double grade;
+
+// this class needs to take in a `Course` datatype as argument
+public EnrolledCourse( Course course )
+public double getGrade()
+public void setGrade( double grade )
+public String toString()
+
+
+
+Module.java
+private final String code;
+private final String name;
+private final String description;
+
+public Module( String code, String name, String description )
+public String getCode()
+public String getName()
+public String getDescription()
+
+@Override
+public String toString()
+
+
+
+Person.java //abstract class
+private final String id;
+private final String name;
+private final String email;
+private final Date birthDate;
+
+protected Person( String id, String name, String email, Date birthDate )
+
+public String getId()
+public String getName()
+public String getEmail()
+public Date getBirthDate()
+
+@Override
+public String toString()
+
+
+
+Student.java extends Person
+private double average;
+public static final double PASS_MIN_GRADE = 3.0;
+
+//HashMap of enrolledCourses of this student
+private final HashMap<String, EnrolledCourse> enrolledCourses = new HashMap<>();
+
+// Constructor
+public Student( String id, String name, String email, Date birthDate )
+public boolean enrollToCourse( Course course )
+public HashMap<String, EnrolledCourse> getEnrolledCourses()
+public String toString()
+
+
+
+CourseService.java
+private final Map<String, Course> courses = new HashMap<>();
+
+public CourseService()
+
+public void registerCourse( Course course )
+public Course getCourse( String code )
+public void showSummary()
+
+
+
+StudentService.java
+private final HashMap<String, Student> students = new HashMap<>();
+
+public void registerStudent( Student student )
+
+public Student findStudent( String studentId )
+public void enrollToCourse( String studentId, Course course )
+public void showSummary()
+public HashMap<String, EnrolledCourse> enrolledCourses(Student student)
+public Course findEnrolledCourse( Student student, String courseId )
