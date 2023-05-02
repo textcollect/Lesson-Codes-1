@@ -1,0 +1,67 @@
+[
+	{
+		"idModuleCode" : "a_art_01",
+		"name" : "Advanced Arts 3",
+		"idCourseCode" : "art_01"
+	},
+	{
+		"idModuleCode" : "a_biol_01",
+		"name" : "Advanced Biology 3",
+		"idCourseCode" : "biol_01"
+	},
+	{
+		"idModuleCode" : "a_chem_01",
+		"name" : "Basic Chemistry 3",
+		"idCourseCode" : "chem_01"
+	},
+	{
+		"idModuleCode" : "a_chem_01",
+		"name" : "Basic Sport 1",
+		"idCourseCode" : "sport_01"
+	},
+	{
+		"idModuleCode" : "a_phys_01",
+		"name" : "Advanced Physics 3",
+		"idCourseCode" : "phys_01"
+	},
+	{
+		"idModuleCode" : "b_art_01",
+		"name" : "Basic Arts 1",
+		"idCourseCode" : "art_01"
+	},
+	{
+		"idModuleCode" : "b_biol_01",
+		"name" : "Basic Biology 1",
+		"idCourseCode" : "biol_01"
+	},
+	{
+		"idModuleCode" : "b_chem_01",
+		"name" : "Basic Chemistry 1",
+		"idCourseCode" : "chem_01"
+	},
+	{
+		"idModuleCode" : "b_phys_01",
+		"name" : "Basic Physics 1",
+		"idCourseCode" : "phys_01"
+	},
+	{
+		"idModuleCode" : "i_art_01",
+		"name" : "Intermediate Arts 2",
+		"idCourseCode" : "art_01"
+	},
+	{
+		"idModuleCode" : "i_biol_01",
+		"name" : "Intermediate Biology 2",
+		"idCourseCode" : "biol_01"
+	},
+	{
+		"idModuleCode" : "i_chem_01",
+		"name" : "Basic Chemistry 2",
+		"idCourseCode" : "chem_01"
+	},
+	{
+		"idModuleCode" : "i_phys_01",
+		"name" : "Intermediate Physics 2",
+		"idCourseCode" : "phys_01"
+	}
+]

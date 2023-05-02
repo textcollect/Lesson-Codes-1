@@ -61,7 +61,7 @@ public class Student extends Person
         //TODO Check the enrolled courses grade and compare to the passing grade
         HashMap<String, EnrolledCourse> passCourse = new HashMap<>();
         for (EnrolledCourse enrolledCourse : this.enrolledCourses.values()) {
-            if (enrolledCourse.getGrade() <= 6 && enrolledCourse.getGrade() >=3) {
+            if (enrolledCourse.getGrade() <= 3 && enrolledCourse.getGrade() >=1) {
                 passCourse.put(enrolledCourse.getCode(), enrolledCourse);
             }
         }

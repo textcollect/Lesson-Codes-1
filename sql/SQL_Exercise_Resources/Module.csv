@@ -1,0 +1,14 @@
+idModuleCode,name,idCourseCode
+a_art_01,Advanced Arts 3,art_01
+a_biol_01,Advanced Biology 3,biol_01
+a_chem_01,Basic Chemistry 3,chem_01
+a_chem_01,Basic Sport 1,sport_01
+a_phys_01,Advanced Physics 3,phys_01
+b_art_01,Basic Arts 1,art_01
+b_biol_01,Basic Biology 1,biol_01
+b_chem_01,Basic Chemistry 1,chem_01
+b_phys_01,Basic Physics 1,phys_01
+i_art_01,Intermediate Arts 2,art_01
+i_biol_01,Intermediate Biology 2,biol_01
+i_chem_01,Basic Chemistry 2,chem_01
+i_phys_01,Intermediate Physics 2,phys_01
