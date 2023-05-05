@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Modal -->
+    <div th:fragment="addModal" class="modal fade" id="addModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Customer's Details</h1>
+                </div>
+                <div class="modal-body">
+                    <form action="/customer.html"> <!-- To add method="post" after server-side code is complete-->
+                        <div class="mb-4 col-auto">
+                            <!-- for and id should be same value -->
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" aria-label="Username" aria-describedby="nameHelp" placeholder="Name" autocomplete="off" required>
+                        </div>
+            
+                        <div class="mb-4 col-auto">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" class="form-control" id="mobile" aria-describedby="mobileHelpBlock" placeholder="Mobile no." autocomplete="off" required>
+                        </div>    
+
+                        <button class="btn btn-primary mb-4" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
