@@ -54,6 +54,8 @@ public class ItemController {
 		itemService.deleteById(id);
 	}
 
+	// Add & save new item to ItemService object which actually saves to the ItemRepository
+	// which is linked to the Item table in db
 	@CrossOrigin
 	@PostMapping("/add")
 	public void save(@RequestParam(name = "name", required = true) String name,

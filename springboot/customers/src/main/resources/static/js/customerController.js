@@ -34,13 +34,13 @@
 //productController.push(product1, product2);
 
 //development APIs
-const addAPI = 'http://localhost:8080/item/add';
-const displayAPI = 'http://localhost:8080/item/all';
+const addAPI = 'http://localhost:8080/customer/add';
+const displayAPI = 'http://localhost:8080/customer/all';
 
 // Initialise an empty array that will be used to store the data received from displayAPI ('/all' api)
-let productController = [];
+let customerController = [];
 
-function displayItem() {
+function displayCustomer() {
 
     //fetch data from database using the REST API endpoint from Spring Boot
     // GET http method is the default, so no need to specify the specifics for GET
@@ -50,21 +50,18 @@ function displayItem() {
             console.log("2. receive data")
             console.log(data);
 
-            data.forEach(function (item, index) {
-                const itemObj = {
-                    id: item.id,
-                    name: item.name,
-                    description: item.description,
-                    imageUrl: item.imageUrl,
-                    style: item.style,
-                    price: item.price
+            data.forEach(function (customer, index) {
+                const customerObj = {
+                    id: customer.id,
+                    name: customer.name,
+                    mobile: customer.mobile                    
                 };
-                // this array contains 12 items from the db(received via the '/all' API)
-                productController.push(itemObj);
+                // this array contains 5 items from the db(received via the '/all' API)
+                customerController.push(customerObj);
             });
-            // calls the function to display all the 12 objects from the productController array
+            // calls the function to display all the 5 objects from the customerController array
             // function is declared below
-            renderProductPage();
+            renderCustomerPage();
         })
         .catch(function (error) {
             console.log(error);
@@ -72,47 +69,46 @@ function displayItem() {
 }
 
 
-function displayDetails(index) {
-    //When user clicks on any "More" button, the details of the selected product will be displayed
-    document.querySelector("#modalName").innerHTML = productController[index].name;
-    document.querySelector("#modalStyle").innerHTML = productController[index].style;
-    document.querySelector("#modalPrice").innerHTML = productController[index].price;
-    document.querySelector("#modalImg").src = productController[index].imageUrl;
-
-
-    //launch the productDetail page
-    //productController[index] pass it to the productDetail page to display
-    //session storage
-}
-
-
-//(3)  Display all products when user launch the product.html page
+//(3)  Display all customers when user launch the customer.html page
 //const displayProduct = () => {
-function renderProductPage() {
+function renderCustomerPage() {
 
     let display = "";
+    
+    display += `
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr class="table-success">
+                        <th style="text-align: center;">Name</th>
+                        <th style="text-align: center;">Mobile</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+            //         <tr>
+            //             <td>John</td>
+            //             <td>12345678</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Alan</td>
+            //             <td>01234567</td>
+            //         </tr>
+            //     </tbody>
+            // </table>`;
 
-    for (let i = 0; i < productController.length; i++) {
-
+    for (let i = 0; i < customerController.length; i++) {
         display += `
-            <div  class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img src=${productController[i].imageUrl} class="card-img-top"
-                    alt="image">
-                <div class="card-body">
-                    <h5 class="card-title">${productController[i].name}</h5>
-                    <p class="card-text">${productController[i].style}</p>
-                    <p class="card-text">${productController[i].description}</p>
-                    <a id="item${i + 1}" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" onClick="displayDetails(${i})">More</a>
-                </div>
-            </div>
-        </div>
-        `
+        <tr>
+                    <td>${customerController[i].name}</td>
+                    <td>${customerController[i].mobile}</td>
+                </tr>`;
     }
 
-    document.querySelector("#row").innerHTML = display;
+    // Close the table
+    display += `</tbody></table>`;
 
-} //End of renderProductPage function
+    document.querySelector("#customer-table").innerHTML = display;
+
+} //End of renderCustomerPage function
 
 
 //4) Add new product to the product list when user clicks on the submit button from the productform.html
@@ -135,18 +131,14 @@ function renderProductPage() {
 // }
 
 //4) Add new product to the product list when user clicks on the submit button from the productform.html
-function addProduct(name, description, imageUrl, style, price, imageObject) {
+function addCustomer(name, mobile) {
     
     // formData is an Object provided by the Browser API for us to send the data over to the backend
     // Make sure names in the append matches the names from the ItemController java
     // no need to match sequence
     const formData = new FormData();
     formData.append('name', name);
-    formData.append('description', description);
-    formData.append('imageUrl', imageUrl);
-    formData.append('style', style);
-    formData.append('price', price);
-    formData.append('imagefile', imageObject);
+    formData.append('mobile', mobile);
 
     // Call the addAPI
     fetch(addAPI, {
@@ -156,8 +148,8 @@ function addProduct(name, description, imageUrl, style, price, imageObject) {
         .then(function (response) {
             console.log(response.status); // Will show you the status - 200 OK, 500, 404
             if (response.ok) {
-                alert("Successfully Added Product!")
-
+                alert("Successfully Added Customer!")
+                
                 // Refresh the page
                 window.location.reload()
             }
@@ -167,7 +159,7 @@ function addProduct(name, description, imageUrl, style, price, imageObject) {
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert("Error adding item to Product")
+            alert("Error adding customer")
         });
 }
 

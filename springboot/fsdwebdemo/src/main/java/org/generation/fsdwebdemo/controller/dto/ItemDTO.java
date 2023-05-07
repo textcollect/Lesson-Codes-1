@@ -12,6 +12,7 @@ public class ItemDTO {
 	private String style;
 	private double price;
 
+	// Constructor
 	public ItemDTO(String name, String description, String imageUrl, String style, double price) {
 		this.name = name;
 		this.description = description;

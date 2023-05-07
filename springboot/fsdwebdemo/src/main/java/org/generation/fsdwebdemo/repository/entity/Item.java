@@ -35,8 +35,8 @@ public class Item {
 	// Create and Update operation, JPA requires the ItemDTO object to
 	//be sent via the controller
 	public Item(ItemDTO itemDTO) {
-		//Transfer the object (with the data) to Entity Class for mapping with the
-		// database table columns and to be able to save the data in the columns
+		//Transfer the object (with the data) to Entity Class from ItemDTO for mapping
+		// with the database table columns and to be able to save the data in the columns
 		this.name = itemDTO.getName();
 		this.description = itemDTO.getDescription();
 		this.imageUrl = itemDTO.getImageUrl();
