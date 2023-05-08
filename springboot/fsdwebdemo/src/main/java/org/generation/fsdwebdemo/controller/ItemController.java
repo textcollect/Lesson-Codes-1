@@ -13,6 +13,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
+// Azure Blob Storage
+import com.azure.storage.blob.BlobClient;
+import com.azure.storage.blob.BlobContainerClient;
+import com.azure.storage.blob.BlobServiceClient;
+import com.azure.storage.blob.BlobServiceClientBuilder;
+
 @RestController
 @RequestMapping("/item") //provides a URL for frontend to call the API endpoint
 public class ItemController {
@@ -33,11 +39,32 @@ public class ItemController {
 	@CrossOrigin
 	@GetMapping("/all")
 	public Iterable<Item> getItems() {
-		// Display images from local folder
+
+//		// Display images from local folder
+//		for (Item image : itemService.all()) {
+//			// productimages/t-shirt1.jpg
+//			String setURL = imageFolder + "/" + image.getImageUrl();
+//			image.setImageUrl(setURL);
+//			// System.out.println(image.getImageUrl());
+//		}
+
+		/* To display images from the Server Container */
+		String connectStr2 = "DefaultEndpointsProtocol=https;AccountName=productimagedemotp;AccountKey=8rVndJyQp9GYHFGMyAyvT2NlNoICsH4FTGlgHIDBt1TrjtEUNdq7jT80o65NIxSQSaY1C6clQfgb+AStZNbTOg==;EndpointSuffix=core.windows.net";
+		//System.out.println("Connect String: " + connectStr2);
+		BlobServiceClient blobServiceClient = new BlobServiceClientBuilder().connectionString(connectStr2).buildClient();
+		String containerName = "prodimage";
+		BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient(containerName);
+
+		//productimagedemotp
+		BlobClient blobClient = containerClient.getBlobClient(itemService.all().get(0).getImageUrl());
+
+		//Loop through the ArrayList of itemService.all() and append the Blob url to the imageUrl
 		for (Item image : itemService.all()) {
-			String setURL = imageFolder + "/" + image.getImageUrl();
+			// path: productimagedemotp/prodimage/t-shirt1.jpg
+			String setURL = blobClient.getAccountUrl() + "/" + containerName + "/" + image.getImageUrl();
 			image.setImageUrl(setURL);
 		}
+
 		// return in the Controller represents a response to the Client
 		return itemService.all();
 	}
