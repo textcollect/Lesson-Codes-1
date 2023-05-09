@@ -40,7 +40,6 @@ public class Customer {
 	}
 
 	// Getter & Setter methods
-
 	public Integer getId() {
 		return id;
 	}

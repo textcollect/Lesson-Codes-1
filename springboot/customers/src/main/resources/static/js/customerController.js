@@ -56,9 +56,11 @@ function displayCustomer() {
                     name: customer.name,
                     mobile: customer.mobile                    
                 };
+
                 // this array contains 5 items from the db(received via the '/all' API)
                 customerController.push(customerObj);
             });
+
             // calls the function to display all the 5 objects from the customerController array
             // function is declared below
             renderCustomerPage();
@@ -152,6 +154,9 @@ function addCustomer(name, mobile) {
                 
                 // Refresh the page
                 window.location.reload()
+
+                // Alternatively, can call the display function again
+                //displayCustomer()
             }
             else {
                 alert("Something went wrong. Please try again")
