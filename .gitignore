@@ -3,6 +3,11 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea/
+.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+**/**/*.properties
 
 ### Eclipse ###
 .apt_generated
@@ -57,6 +62,3 @@ replay_pid*
 
 ### npm ###
 **/node_modules/
-
-### Java ###
-springboot/
