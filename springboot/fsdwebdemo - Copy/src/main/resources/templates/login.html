@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css" />
+    <title>Login</title>
+    <script type="text/javascript"
+        src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=uR-gWFq8UG5jVzP-KJakXhzu8113vqEOfwAljQjDfeQEkb_GyFt3X57ZGIN7GixJeeUJzMdc4KMadqv2LQ1t663Ysz1eMXAeDHhO1yQ7mTa90AKSyOr8pzBMmFXkwByO_IU4_P9FnDFtr2uElVqO9xqhtf70MeutfFvuYRyHoq7P3NaEqC6Su9EJX9u8iy2XmE-jAuVJIp9Yg9hUI6cKmMzlURRO4KWvWuidfC4ISSonzsjnG-aVWWVR7iLHeok-r-e8-gSffrZJbz-E5EvNG_rFqMb9xlhaduT8hYvY_bpIS84Sp4mgKIy_5p7NUGyFLptsW7C1wNatXy8B294YnEE-TkNRf5sisAFjoJA4m_vbDGPlKUULK2u9NNqbG0uB5PGGrB4Y6lkAkJkkDWGMixA9XJaPgeZrHbOShzEa78nuox9lDrDCKmbjYQNysccpO5xhEF9cIevc4YMEcS7wKIWekDIcfonXUycuU6A6FMMWVxcqg5swIfwebzeuDzgUU58bbNZWNCYZtQUiKAeXjUyuZMnCxzL1TaNj52jEmU-hrsph6UJI9ZVFDR28_2sPHzkqY4OFmBWQof6OFRpKN3RK2RPmMH9m5ScEhtsQbjIYmCiwe9-mGpVABdRP-F2Pfjwo2Dgtt76Iev5L_PNHwyK6248I3Ku8roXXZOfNciAtWejEDPtfycxk1ygksQGGBDZsC8j1BjJLrkM365rPiV_hSaYfcG1V7P83YFSrCrgZq3dE4_R-7umBnEDg0gINbs0rhbE604lbAZKFQs_duLbNbpZ2q_sFQwG71DgEkSLilBt3hq4MCTZaFwRDk2qdK2-s7MhjOTOyQTYvjeb8SbS7T2-9L5NDRbicaCJ4SJ4GL-qzcOuJcSxzknpFmz0kTIBQqSbyHLBkbU446wwE-MWCVAfWuoAD24gx7uNhfEPVUaZYnIUNNFGqerXx7T5tVgBeq3PRzg4gRdCBA-TNSowYKdSciVcGisGh7KNptAxkqyfrksZ3354e9IsZgdY2DraSVp3gBzS8cm1UPHoHTQxby6HM9T1n1foS21IFYCzAZWHISHJkDUJI-woV8eY0sw9X0KUfqI6ioyX5HgDphzY_9H52e2TueOpUyw-hZS0LX3vPX5XUpNmKXj6_P5cKzabUZ1j0l2l5vjii0c8fntJ3nHGEorPp6cuVSvDSBEZotULfBCqd6-OaToyWaNQ6fuviVf-f-YILp9ojXMWd3bgnalO11QPF__xQL-pDSMn8OA3xBrP-TVAssNAGn7030EsyPyurBiXojU-htuFRfN32KFq0jG5vv4D-nCvgUY1d396cWq5OOtakmgHum_lNCqU7Y6geFOCdsLfrMK0vHn7wVbChK-zxoCdYzIpisqKLo7nCdWxxiZIWbEYgvdQqIvm5CEbr2hyb6b_fk-TY8GyNqfsfB2PLzPaMkmh6eLYLRU6Vde4yx23h4NXO0gYx7qIUeuV2gZd5AHuleMI4uLVT6vCc6JSydTBXGo9n7R8nNBdEwfPpRprEemV2ucksM7t6Nad94LiNDIhV_As-BZB8EM8pAV8bKgAsOwxU8XgwmccYNQvDpllQlVS01iFNbP_hiptQ0-s2zWD3Eom30MMG9YqNSJoV1_4uQ_B98mFayRgCh1vsy0QbKDG_m8NAT-cQER9rN1mAMKO0P2E2jtCKNzbmShfziX9xD6ixy0g2xfKfUW24IVPuFPojcpU0ZGWRnmdtqcO8F4XgyIs7XJMBMi2E41D4Ke4J_lruTqo"
+        charset="UTF-8"></script>
+</head>
+
+<body>
+
+    <div th:insert="~{common/navbar :: navbar}" id="navbar"></div>
+
+    <!-- Login Form -->
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <h2>Login</h2>
+                
+                <!-- Spring Security Framework works cloasely with thymeleaf -->
+                <div th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+    
+                <form th:action="@{/login}" method="post">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                            aria-describedby="NameHelp" required>
+                        <small id="NameHelp" class="form-text text-muted">We'll never share your username with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="col-sm">
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Logout" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div th:insert="~{common/footer :: footer}" id="footer"></div>
+    <!-- <div th:insert="~{about.html :: about}"  id="about"></div> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</body>
+
+</html>

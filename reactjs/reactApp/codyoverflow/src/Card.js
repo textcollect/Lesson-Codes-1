@@ -1,9 +1,23 @@
 import React from 'react';
+import Header from './Header';
 import Body from './Body';
 
 /*
-Map over the comments array with the argument named comment and 
-return an instance of the Card component.
+Card will be the outer “shell” that contains our two smaller components: 
+Card is the parent, and Header and Body are the child components.
 
-For each component, give it an attribute named commentObject and the value {comment}.
+Begin defining the Card component. Card should receive props.
+
+Card should return an instance of the Header component, 
+and an instance of the Body component.
 */
+
+function Card(props) {
+    return (
+    <div>
+        <Header profileImg={props.commentObject.profileImg} username={props.commentObject.username} />
+        <Body comment={props.commentObject.comment} />
+    </div>);
+}
+
+export default Card;

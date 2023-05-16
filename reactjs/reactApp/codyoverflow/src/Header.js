@@ -1,5 +1,4 @@
 import React from 'react';
-import { comments } from './commentData';
 
 // receive props. The component should return two elements, 
 //an <img> element whose src attribute will receive the profileImg property from props,
