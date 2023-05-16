@@ -19,6 +19,8 @@ import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobServiceClient;
 import com.azure.storage.blob.BlobServiceClientBuilder;
 
+// Request mapping is to provide a URL route for frontend to call
+//controller for /item, /user, /customer, /post
 @RestController
 @RequestMapping("/item") //provides a URL for frontend to call the API endpoint
 public class ItemController {
@@ -48,6 +50,7 @@ public class ItemController {
 //			// System.out.println(image.getImageUrl());
 //		}
 
+
 		/* To display images from the Server Container */
 		String connectStr2 = "DefaultEndpointsProtocol=https;AccountName=productimagedemotp;AccountKey=8rVndJyQp9GYHFGMyAyvT2NlNoICsH4FTGlgHIDBt1TrjtEUNdq7jT80o65NIxSQSaY1C6clQfgb+AStZNbTOg==;EndpointSuffix=core.windows.net";
 		//System.out.println("Connect String: " + connectStr2);
@@ -69,6 +72,7 @@ public class ItemController {
 		return itemService.all();
 	}
 
+	// The id value will be sent from the front-end through the API URL parameter
 	@CrossOrigin
 	@GetMapping("/{id}")
 	public Item findItemById(@PathVariable Integer id) {
@@ -78,7 +82,7 @@ public class ItemController {
 	@CrossOrigin
 	@DeleteMapping("/del/{id}")
 	public void delete(@PathVariable Integer id) {
-		itemService.deleteById(id);
+		itemService.delete(id);
 	}
 
 	// Add & save new item to ItemService object which actually saves to the ItemRepository

@@ -13,10 +13,11 @@ import org.generation.fsdwebdemo.repository.ItemRepository;
 @Service
 public class ItemServiceMySQL implements ItemService {
 
-	//which class object is this class dependent on?
-	//This ItemServiceMySQL class has to depend on another class object to perform
-	// actions (e.g. save, delete, all, findItemById
+	// Which class object is this class dependent on?
+	// This ItemServiceMySQL class has to depend on another class object to perform
+	//CRUD actions (e.g. save, delete, all, findItemById)
 	//dependent object class is the CRUDRepository class that is provided by Spring boot
+
 	//to perform dependency injection -> access the CRUDRepository class through the
 	// ItemRepository interface that we have created
 
@@ -30,14 +31,20 @@ public class ItemServiceMySQL implements ItemService {
 
 	@Override
 	public Item save(Item item) {
-		return itemRepository.save(item);
+		// Since we have done the dependency injection of the itemRepository, therefore
+		// now we can call any methods from the CRUDRepository Class
+		return this.itemRepository.save(item);
 	}
 
 	@Override
-	public void deleteById(int itemId) {}
+	public void delete(int itemId) {
+		this.itemRepository.deleteById(itemId); // dependency object(s) - CRUDRepository Class, JPARepository
+	}
 
 	@Override
 	public List<Item> all() {
+		// @Query - Query class provided by Springboot: SELECT * FROM Item
+		// Repository class provided by Springboot: we do not need to write any query statement
 		List<Item> result = new ArrayList<>();
 		itemRepository.findAll().forEach(result::add);
 		return result;

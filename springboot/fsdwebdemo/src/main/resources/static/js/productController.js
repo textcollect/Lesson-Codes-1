@@ -34,12 +34,12 @@
 //productController.push(product1, product2);
 
 // Development APIs
-// const addAPI = 'http://localhost:8080/item/add';
-// const displayAPI = 'http://localhost:8080/item/all';
+const addAPI = 'http://localhost:8080/item/add';
+const displayAPI = 'http://localhost:8080/item/all';
 
 // Production APIs
-const addAPI = 'https://webdemonewtp.azurewebsites.net/item/add';
-const displayAPI = 'https://webdemonewtp.azurewebsites.net/item/all';
+// const addAPI = 'https://webdemonewtp.azurewebsites.net/item/add';
+// const displayAPI = 'https://webdemonewtp.azurewebsites.net/item/all';
 
 
 // Initialise an empty array that will be used to store the data received from displayAPI ('/all' api)

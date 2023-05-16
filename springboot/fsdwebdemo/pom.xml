@@ -23,18 +23,18 @@
 			<properties>
 				<activatedProperties>dev</activatedProperties>
 			</properties>
-<!--			          <activation>-->
-<!--			             <activeByDefault>true</activeByDefault>-->
-<!--			          </activation>-->
+			          <activation>
+			             <activeByDefault>true</activeByDefault>
+			          </activation>
 		</profile>
 		<profile>
 			<id>prod</id>
 			<properties>
 				<activatedProperties>prod</activatedProperties>
 			</properties>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
+<!--			<activation>-->
+<!--				<activeByDefault>true</activeByDefault>-->
+<!--			</activation>-->
 		</profile>
 	</profiles>
 
@@ -51,6 +51,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
@@ -70,6 +71,26 @@
 			<artifactId>spring-security-web</artifactId>
 		</dependency>
 		<!-- End of Security authentication dependencies -->
+
+		<!-- Testing packages dependencies -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- End of Testing packages dependencies -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -28,11 +28,13 @@ public class CustomerServiceMySQL implements CustomerService{
 
 	@Override
 	public Customer save(Customer customer) {
-		return customerRepository.save(customer);
+		return this.customerRepository.save(customer);
 	}
 
 	@Override
-	public void deleteById(int customerId) {}
+	public void delete(int customerId) {
+		this.customerRepository.deleteById(customerId);
+	}
 
 	@Override
 	public List<Customer> all() {

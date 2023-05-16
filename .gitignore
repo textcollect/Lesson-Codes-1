@@ -7,7 +7,7 @@ out/
 **/*.iws
 **/*.iml
 **/*.ipr
-**/**/*.properties
+**/**/application-prod.properties
 
 ### Eclipse ###
 .apt_generated
@@ -62,3 +62,24 @@ replay_pid*
 
 ### npm ###
 **/node_modules/
+
+### ReactJS ###
+reactjs/**/.pnp
+reactjs/**/.pnp.js
+
+# testing
+reactjs/**/coverage
+
+# production
+reactjs/**/build
+
+# misc
+reactjs/**/.DS_Store
+reactjs/**/.env.local
+reactjs/**/.env.development.local
+reactjs/**/.env.test.local
+reactjs/**/.env.production.local
+
+reactjs/**/npm-debug.log*
+reactjs/**/yarn-debug.log*
+reactjs/**/yarn-error.log*

@@ -38,7 +38,7 @@ public class CustomerController {
 	@CrossOrigin
 	@DeleteMapping("/del/{id}")
 	public void delete(@PathVariable Integer id) {
-		customerService.deleteById(id);
+		customerService.delete(id);
 	}
 
 	// Add & save new customer to CustomerService object which actually saves to the CustomerRepository

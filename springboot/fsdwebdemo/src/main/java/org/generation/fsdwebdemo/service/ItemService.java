@@ -8,7 +8,7 @@ public interface ItemService {
 	Item save(Item item);
 
 	//Delete item from database - based on item Id
-	void deleteById(int itemId);
+	void delete(int itemId);
 
 	//Read all item from database
 	List<Item> all();

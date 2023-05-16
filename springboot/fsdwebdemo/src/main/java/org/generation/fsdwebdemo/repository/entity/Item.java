@@ -20,7 +20,7 @@ public class Item {
 	private String description;
 	private String imageUrl;
 	private String style;
-	private  double price;
+	private double price;
 
 	// Item class used to map w the Database table
 	// Any CRUD operation, JPA will make use of this Item class to map

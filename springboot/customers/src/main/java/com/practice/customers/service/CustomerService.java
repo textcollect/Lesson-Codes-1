@@ -9,7 +9,7 @@ public interface CustomerService {
 	Customer save(Customer customer);
 
 	//Delete item from database - based on item Id
-	void deleteById(int customerId);
+	void delete(int customerId);
 
 	//Read all item from database
 	List<Customer> all();
