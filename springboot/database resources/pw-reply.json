@@ -1,0 +1,10 @@
+[{"idReply":1, "reply":"Nice post!", "replyTime":"2023-05-11 00:14:30", "user_id":1, "idPost":1},
+ {"idReply":2, "reply":"Great story!", "replyTime":"2023-05-11 00:14:36", "user_id":2, "idPost":1},
+ {"idReply":3, "reply":"cool story", "replyTime":"2023-05-11 00:14:45", "user_id":3, "idPost":1},
+ {"idReply":4, "reply":"this was really great", "replyTime":"2023-05-11 00:14:47", "user_id":1, "idPost":1},
+ {"idReply":5, "reply":"amazing as always", "replyTime":"2023-05-11 00:14:51", "user_id":3, "idPost":1},
+ {"idReply":6, "reply":"i always look forwad to your posts", "replyTime":"2023-05-11 00:14:52", "user_id":1, "idPost":2},
+ {"idReply":7, "reply":"nice one", "replyTime":"2023-05-11 00:14:54", "user_id":3, "idPost":3},
+ {"idReply":8, "reply":"Great! Been a while since I read something so satisfying", "replyTime":"2023-05-11 00:14:55", "user_id":2, "idPost":3},
+ {"idReply":9, "reply":"Yeah, true", "replyTime":"2023-05-11 00:14:58", "user_id":4, "idPost":3},
+ {"idReply":10, "reply":"I just feel like posting a reply here to not break my streak...", "replyTime":"2023-05-11 00:14:59", "user_id":2, "idPost":2}]

@@ -1,0 +1,11 @@
+[{"user_id":1, "username":"admin", "password":"$2a$10$zxvEq8XzYEYtNjbkRsJEbukHeRx3XS6MDXHMu8cNuNsRfZJWwswDy", "email":"admin@tp.edu.sg", "role":"ROLE_ADMIN", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":2, "username":"kitboga", "password":"60652", "email":"bestgoats@yahoo.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":3, "username":"tom", "password":"password123", "email":"tomcat@gmail.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":4, "username":"pierogi", "password":"secureP@ssword101", "email":"pierogi@gmail.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":5, "username":"scammerpayback", "password":"His 1 Scorer3 Will Enshrine The5 Offshoot", "email":"scammerpayback@gmail.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":6, "username":"thstockguy", "password":"An Usher7 Beguails2 The Terrier 69420", "email":"tsg@gmail.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":7, "username":"esther", "password":"When7 Does The1 Stump Prod Their Rash", "email":"bestgoats@aol.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":8, "username":"anderson", "password":"The 1 Stacyrile Arouses3 A5 Newscast", "email":"anderson001@tp.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":9, "username":"xyzTheOne", "password":"Their Listing Thing6 Beat7 My Fare", "email":"kekw123@gmail.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":10, "username":"firstUser", "password":"Will Her Dozy One5 Fumble Their Stranger1", "email":"alphacenturion@gmail.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"},
+ {"user_id":11, "username":"Number2", "password":"Quarries Might6 Unite Onto2 This Punctual Chumper", "email":"lukeskywalker@disney.com", "role":"ROLE_USER", "enabled":1, "creation":"2023-05-11 00:31:27"}]

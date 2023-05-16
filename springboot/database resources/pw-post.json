@@ -1,0 +1,4 @@
+[{"idPost":1, "postTitle":"title 1", "postDescribe":"description 1", "postFull":"full-length 1", "postTime":"2023-05-10 17:20:29", "user_id":1},
+ {"idPost":2, "postTitle":"title 2", "postDescribe":"description 2", "postFull":"full-length 2", "postTime":"2023-05-10 17:20:35", "user_id":1},
+ {"idPost":3, "postTitle":"title 3", "postDescribe":"description 2", "postFull":"full-length 2", "postTime":"2023-05-10 17:20:37", "user_id":2},
+ {"idPost":4, "postTitle":"title 4", "postDescribe":"description 4", "postFull":"full-length 2", "postTime":"2023-05-10 23:59:55", "user_id":3}]
